@@ -1,0 +1,2332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Match™ | Tu negocio debería verse a tu altura</title>
+  <meta name="description" content="Una experiencia intensiva de tres días para empresarias que ya evolucionaron y necesitan reconocer dónde su negocio dejó de representar correctamente su nivel.">
+  <meta property="og:title" content="The Match™ | Tu negocio debería verse a tu altura">
+  <meta property="og:description" content="Una experiencia intensiva de tres días para empresarias que ya evolucionaron.">
+  <meta property="og:image" content="public/assets/logo-match.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Analytics placeholders — reemplaza con tus IDs reales -->
+  <!-- Google Analytics 4
+  <script async src="https://www.googletagmanager.com/gtag/js?id=[GA_MEASUREMENT_ID]"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '[GA_MEASUREMENT_ID]');
+  </script>
+  -->
+  <!-- Meta Pixel
+  <script>
+    !function(f,b,e,v,n,t,s){...}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '[META_PIXEL_ID]');
+    fbq('track', 'PageView');
+  </script>
+  -->
+
+  <style>
+    /* ═══════════════════════════════════════════════════
+       DESIGN TOKENS — paleta extraída del símbolo oficial
+       ═══════════════════════════════════════════════════ */
+    :root {
+      --ivory:      #F6ECDA;
+      --cream:      #EFE1C6;
+      --sand:       #DCC79E;
+      --choco:      #3B2417;
+      --choco-mid:  #5C3D28;
+      --gold:       #C69A5C;
+      --gold-muted: #A67C3D;
+      --near-black: #180F09;
+
+      --c80: rgba(59,36,23,.86);
+      --c60: rgba(59,36,23,.66);
+      --c40: rgba(59,36,23,.46);
+      --c20: rgba(59,36,23,.24);
+      --c12: rgba(59,36,23,.14);
+      --c06: rgba(59,36,23,.07);
+
+      --i80: rgba(246,236,218,.85);
+      --i60: rgba(246,236,218,.68);
+      --i40: rgba(246,236,218,.48);
+      --i20: rgba(246,236,218,.24);
+      --i12: rgba(246,236,218,.14);
+
+      --gold-a: rgba(198,154,92,.85);
+      --gold-b: rgba(198,154,92,.42);
+      --gold-c: rgba(198,154,92,.12);
+
+      --font-d: 'Playfair Display','Georgia',serif;
+      --font-b: 'Inter','Helvetica Neue',sans-serif;
+
+      --ease-out: cubic-bezier(0.16,1,0.3,1);
+      --ease-io:  cubic-bezier(0.65,0,0.35,1);
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ivory);
+      color: var(--choco);
+      font-family: var(--font-b);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ── Reveal animations ── */
+    .rv {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .9s var(--ease-out), transform .9s var(--ease-out);
+    }
+    .rv.on { opacity: 1; transform: none; }
+    .rv-fade { opacity: 0; transition: opacity 1.2s var(--ease-out); }
+    .rv-fade.on { opacity: 1; }
+    .rv-up  { opacity: 0; transform: translateY(18px); transition: opacity .8s var(--ease-out), transform .8s var(--ease-out); }
+    .rv-up.on { opacity: 1; transform: none; }
+    .d1 { transition-delay: .10s; }
+    .d2 { transition-delay: .22s; }
+    .d3 { transition-delay: .36s; }
+    .d4 { transition-delay: .52s; }
+    .d5 { transition-delay: .68s; }
+    .d6 { transition-delay: .86s; }
+
+    /* line that grows */
+    .lg { width:0; height:1px; background:var(--gold); transition: width 1.2s var(--ease-out); }
+    .lg.on { width:40px; }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 17px 40px;
+      font-family: var(--font-b);
+      font-size: 9.5px;
+      font-weight: 500;
+      letter-spacing: .46em;
+      text-transform: uppercase;
+      transition: all .3s var(--ease-out);
+      position: relative;
+    }
+    .btn-dark { background: var(--choco); color: var(--ivory); }
+    .btn-dark:hover { background: #2A1C0F; }
+    .btn-light { background: var(--ivory); color: var(--choco); }
+    .btn-light:hover { background: var(--cream); }
+    .btn-ghost-light { background: transparent; color: var(--ivory); border: .75px solid var(--i40); }
+    .btn-ghost-light:hover { background: var(--i12); border-color: var(--i60); }
+
+    /* ── Layout util ── */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 64px; }
+    .wrap-sm { max-width: 820px; margin: 0 auto; padding: 0 64px; }
+    .wrap-md { max-width: 1000px; margin: 0 auto; padding: 0 64px; }
+
+    .lbl {
+      font-family: var(--font-b);
+      font-size: 7.5px;
+      font-weight: 400;
+      letter-spacing: .55em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .lbl-d { color: rgba(198,154,92,.70); }
+
+    .divider { width:40px; height:1px; background:var(--gold); flex-shrink:0; }
+    .divider-d { background: rgba(198,154,92,.55); }
+    .hr { width:100%; height:.5px; background:var(--c12); }
+    .hr-d { background: rgba(246,236,218,.07); }
+
+    /* ══════════════════════════════════════════
+       HEADER
+    ══════════════════════════════════════════ */
+    #hdr {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 26px 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background .5s ease, padding .4s ease;
+    }
+    #hdr.scrolled {
+      background: rgba(246,236,218,.90);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      padding: 16px 52px;
+      border-bottom: .5px solid var(--c12);
+    }
+    .hdr-wordmark {
+      font-family: var(--font-b);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: .50em;
+      text-transform: uppercase;
+      color: var(--i60);
+      transition: color .4s ease;
+    }
+    #hdr.scrolled .hdr-wordmark { color: var(--c60); }
+    .hdr-nav {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+    .hdr-nav a {
+      font-family: var(--font-b);
+      font-size: 9.5px;
+      font-weight: 400;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: var(--i40);
+      transition: color .3s ease;
+    }
+    #hdr.scrolled .hdr-nav a { color: var(--c60); }
+    .hdr-nav a:hover { color: var(--i80); }
+    #hdr.scrolled .hdr-nav a:hover { color: var(--choco); }
+    .hdr-cta {
+      font-family: var(--font-b);
+      font-size: 8.5px;
+      font-weight: 500;
+      letter-spacing: .44em;
+      text-transform: uppercase;
+      padding: 10px 22px;
+      color: var(--i60);
+      border: .5px solid var(--i20);
+      transition: all .3s ease;
+    }
+    #hdr.scrolled .hdr-cta { background: var(--choco); color: var(--ivory); border-color: transparent; }
+    .hdr-cta:hover { border-color: var(--i40); color: var(--ivory); }
+    #hdr.scrolled .hdr-cta:hover { background: #2A1C0F; }
+
+    #menu-btn { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    #menu-btn span { display: block; width: 22px; height: 1px; background: var(--i60); transition: background .3s ease; }
+    #hdr.scrolled #menu-btn span { background: var(--c60); }
+
+    #mob-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--near-black);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+    }
+    #mob-menu.open { display: flex; }
+    #mob-menu a {
+      font-family: var(--font-d);
+      font-size: 36px;
+      font-style: italic;
+      font-weight: 700;
+      color: var(--i80);
+      letter-spacing: -.5px;
+    }
+    #mob-close {
+      position: absolute;
+      top: 26px; right: 26px;
+      font-size: 22px;
+      color: var(--i40);
+      cursor: pointer;
+      padding: 8px;
+    }
+    #mob-menu .btn { margin-top: 16px; }
+
+    /* ══════════════════════════════════════════
+       ACT 1 — HERO
+    ══════════════════════════════════════════ */
+    #hero {
+      min-height: 100dvh;
+      background: var(--near-black);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 70% at 70% 45%, rgba(198,154,92,.055) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-left {
+      padding: 140px 72px 100px 80px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-eye {
+      font-family: var(--font-b);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .60em;
+      text-transform: uppercase;
+      color: rgba(198,154,92,.85);
+      margin-bottom: 32px;
+    }
+    .hero-title {
+      font-family: var(--font-d);
+      font-size: clamp(42px,5.2vw,72px);
+      font-style: italic;
+      font-weight: 700;
+      line-height: .90;
+      letter-spacing: -1.5px;
+      color: rgba(246,236,218,.95);
+      margin-bottom: 6px;
+    }
+    .hero-title-b {
+      font-family: var(--font-d);
+      font-size: clamp(42px,5.2vw,72px);
+      font-style: italic;
+      font-weight: 700;
+      line-height: .90;
+      letter-spacing: -1.5px;
+      color: rgba(198,154,92,.78);
+      margin-bottom: 38px;
+    }
+    .hero-title-reveal { overflow: hidden; display: block; }
+    .hero-title-inner {
+      display: block;
+      transform: translateY(105%);
+      transition: transform 1.1s var(--ease-out);
+    }
+    .hero-title-inner.on { transform: translateY(0); }
+
+    .hero-sub {
+      font-family: var(--font-b);
+      font-size: 16.5px;
+      font-weight: 500;
+      line-height: 1.72;
+      color: rgba(246,236,218,.86);
+      max-width: 42ch;
+      margin-bottom: 10px;
+    }
+    .hero-meta {
+      font-family: var(--font-b);
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: .30em;
+      text-transform: uppercase;
+      color: rgba(246,236,218,.48);
+      margin-bottom: 36px;
+    }
+    .hero-cta-wrap { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+    .hero-tag {
+      font-family: var(--font-b);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .34em;
+      text-transform: uppercase;
+      color: rgba(246,236,218,.46);
+    }
+    .hero-right {
+      position: relative;
+      height: 100%;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+    .hero-symbol-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-symbol {
+      width: min(82%, 460px);
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 48px 100px rgba(0,0,0,.45), 0 20px 40px rgba(0,0,0,.25);
+      animation: float 9s ease-in-out infinite;
+    }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }
+
+    /* ══════════════════════════════════════════
+       ACT 2 — LA INCOMODIDAD
+    ══════════════════════════════════════════ */
+    #inco {
+      background: var(--ivory);
+      padding: 140px 0;
+    }
+    .ed-seq {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+    .ed-block { display: flex; flex-direction: column; gap: 14px; }
+    .ed-stmt {
+      font-family: var(--font-d);
+      font-size: clamp(28px,3.8vw,46px);
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.10;
+      color: var(--choco);
+    }
+    .ed-stmt.dim { color: rgba(59,36,23,.24); }
+    .ed-body {
+      font-family: var(--font-b);
+      font-size: 15.5px;
+      font-weight: 400;
+      line-height: 1.84;
+      color: var(--c60);
+      max-width: 60ch;
+    }
+    .ed-pause {
+      width: 1px;
+      height: 52px;
+      background: rgba(198,154,92,.18);
+      align-self: center;
+    }
+    .hl-block {
+      padding: 26px 32px;
+      border-left: 1.5px solid var(--gold);
+      background: rgba(198,154,92,.055);
+    }
+    .bridge-line {
+      font-family: var(--font-d);
+      font-size: clamp(18px,2vw,23px);
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.36;
+      color: var(--c40);
+      margin-top: 30px;
+    }
+    .bridge-line em { font-style: italic; color: var(--gold-muted); }
+    .bridge-line--d { color: rgba(246,236,218,.42); }
+    .bridge-line--d em { color: var(--gold); }
+    .hl-text {
+      font-family: var(--font-d);
+      font-size: clamp(20px,2.2vw,28px);
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.40;
+      color: var(--choco);
+    }
+
+    /* ══════════════════════════════════════════
+       ACT 3 — LAS ESCENAS
+    ══════════════════════════════════════════ */
+    #escenas {
+      background: var(--cream);
+      padding: 120px 0 0;
+    }
+    .escenas-hd { padding: 0 0 72px; }
+    .scene {
+      padding: 72px 0;
+      border-top: .5px solid var(--c12);
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .scene-lbl {
+      font-family: var(--font-b);
+      font-size: 8px;
+      font-weight: 400;
+      letter-spacing: .56em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding-top: 8px;
+    }
+    .scene-body { display: flex; flex-direction: column; gap: 18px; }
+    .scene-title {
+      font-family: var(--font-d);
+      font-size: clamp(26px,3.2vw,40px);
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.10;
+      color: var(--choco);
+    }
+    .scene-p {
+      font-family: var(--font-b);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.86;
+      color: var(--c60);
+      max-width: 62ch;
+    }
+    .scene-closing {
+      font-family: var(--font-d);
+      font-size: 21px;
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.42;
+      color: var(--choco);
+      padding: 18px 22px;
+      border-left: 1.5px solid var(--gold);
+      background: rgba(198,154,92,.06);
+    }
+    .scene-list { display: flex; flex-direction: column; gap: 0; }
+    .scene-list-item {
+      display: flex;
+      gap: 16px;
+      padding: 9px 0;
+      border-bottom: .5px solid var(--c12);
+      align-items: baseline;
+    }
+    .scene-list-item:first-child { border-top: .5px solid var(--c12); }
+    .scene-list-dash { font-family: var(--font-b); font-size: 11px; color: var(--gold-muted); flex-shrink: 0; }
+    .scene-list-txt { font-family: var(--font-b); font-size: 14.5px; font-weight: 400; line-height: 1.65; color: var(--c60); }
+
+    /* ══════════════════════════════════════════
+       ACT 4 — SEÑALES
+    ══════════════════════════════════════════ */
+    #signals {
+      background: var(--near-black);
+      padding: 140px 0;
+    }
+    .signals-hd { text-align: center; margin-bottom: 72px; }
+    .signals-body-txt {
+      font-family: var(--font-b);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.85;
+      color: rgba(246,236,218,.42);
+      max-width: 52ch;
+      margin: 0 auto;
+    }
+    .sig-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      border: .5px solid rgba(246,236,218,.06);
+      margin-bottom: 0;
+    }
+    .sig-item {
+      padding: 26px 20px;
+      border: .5px solid rgba(246,236,218,.04);
+      text-align: center;
+      transition: background .5s ease, border-color .5s ease;
+    }
+    .sig-item.lit { background: rgba(198,154,92,.10); border-color: rgba(198,154,92,.38); }
+    .sig-word {
+      font-family: var(--font-b);
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: .52em;
+      text-transform: uppercase;
+      color: rgba(246,236,218,.32);
+      transition: color .5s ease;
+    }
+    .sig-item.lit .sig-word { color: rgba(246,236,218,.92); }
+    .sig-connector {
+      display: flex;
+      justify-content: center;
+      padding: 14px 0;
+    }
+    .sig-line { width:1px; height:52px; background: linear-gradient(to bottom, rgba(198,154,92,.55), rgba(198,154,92,.10)); }
+    .sig-conclusion {
+      padding: 30px 48px;
+      border: .75px solid rgba(198,154,92,.45);
+      background: rgba(198,154,92,.10);
+      text-align: center;
+    }
+    .sig-conc-lbl {
+      font-family: var(--font-b);
+      font-size: 7.5px;
+      font-weight: 400;
+      letter-spacing: .52em;
+      text-transform: uppercase;
+      color: rgba(198,154,92,.60);
+      margin-bottom: 12px;
+    }
+    .sig-conc-text {
+      font-family: var(--font-d);
+      font-size: clamp(22px,2.8vw,34px);
+      font-style: italic;
+      font-weight: 700;
+      color: rgba(246,236,218,.88);
+      line-height: 1.18;
+    }
+    .sig-question {
+      text-align: center;
+      margin-top: 64px;
+    }
+    .sig-q-text {
+      font-family: var(--font-d);
+      font-size: clamp(26px,3.2vw,42px);
+      font-style: italic;
+      font-weight: 700;
+      color: rgba(246,236,218,.65);
+      line-height: 1.18;
+    }
+
+    /* ══════════════════════════════════════════
+       ACT 5 — THE MISMATCH
+    ══════════════════════════════════════════ */
+    #mismatch {
+      background: var(--cream);
+      padding: 140px 0;
+      overflow: hidden;
+    }
+    .mm-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+    .mm-visual {
+      position: relative;
+      height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mm-figure {
+      position: absolute;
+      width: 140px;
+      height: 280px;
+      background: var(--choco);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      clip-path: polygon(20% 0%,80% 0%,100% 20%,100% 80%,80% 100%,20% 100%,0% 80%,0% 20%);
+    }
+    .mm-shadow {
+      position: absolute;
+      width: 140px;
+      height: 280px;
+      background: rgba(198,154,92,.48);
+      top: 50%;
+      left: 50%;
+      transform: translate(calc(-50% + var(--so,52px)), calc(-50% + var(--sov,26px)));
+      z-index: 1;
+      clip-path: polygon(20% 0%,80% 0%,100% 20%,100% 80%,80% 100%,20% 100%,0% 80%,0% 20%);
+      filter: blur(5px);
+      transition: transform .08s linear;
+    }
+    .mm-lbl-a {
+      position: absolute;
+      bottom: 34px; left: 50%;
+      transform: translateX(-62%);
+      font-family: var(--font-b); font-size: 8px; font-weight: 400;
+      letter-spacing: .34em; text-transform: uppercase; color: var(--c60);
+      white-space: nowrap; z-index: 3;
+    }
+    .mm-lbl-b {
+      position: absolute;
+      bottom: 34px; right: 6%;
+      font-family: var(--font-b); font-size: 8px; font-weight: 700;
+      letter-spacing: .34em; text-transform: uppercase; color: rgba(198,154,92,.90);
+      white-space: nowrap; z-index: 3;
+    }
+    .mm-text { display: flex; flex-direction: column; gap: 20px; }
+    .mm-body {
+      font-family: var(--font-b);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.85;
+      color: var(--c60);
+      max-width: 52ch;
+    }
+    .mm-def {
+      margin-top: 10px;
+      padding: 24px 28px;
+      border-left: 1.5px solid var(--gold);
+      background: rgba(198,154,92,.07);
+    }
+    .mm-def-title {
+      font-family: var(--font-b);
+      font-size: 8px;
+      font-weight: 500;
+      letter-spacing: .50em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .mm-def-body {
+      font-family: var(--font-b);
+      font-size: 13.5px;
+      font-weight: 400;
+      line-height: 1.78;
+      color: var(--c70, rgba(59,36,23,.72));
+    }
+    .mm-final {
+      margin-top: 8px;
+      font-family: var(--font-d);
+      font-size: clamp(20px,2.2vw,28px);
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.32;
+      color: var(--choco);
+    }
+
+    /* ══════════════════════════════════════════
+       ACT 6 — EL PUENTE
+    ══════════════════════════════════════════ */
+    #puente {
+      background: var(--ivory);
+      padding: 140px 0;
+    }
+    .bridge-wrap { margin: 72px 0 60px; }
+    .bridge-svg { width: 100%; height: auto; display: block; overflow: visible; }
+    .bp { stroke-dasharray: 700; stroke-dashoffset: 700; transition: stroke-dashoffset 2.2s var(--ease-out); }
+    .bp.on { stroke-dashoffset: 0; }
+    .puente-body {
+      font-family: var(--font-b);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.85;
+      color: var(--c60);
+      max-width: 60ch;
+    }
+    .puente-final {
+      font-family: var(--font-d);
+      font-size: clamp(26px,3vw,38px);
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.20;
+      color: var(--choco);
+    }
+
+    /* ══════════════════════════════════════════
+       ACT 7 — PRESENTACIÓN DE THE MATCH
+    ══════════════════════════════════════════ */
+    #presentacion {
+      background: var(--near-black);
+      padding: 160px 0;
+    }
+    .pres-inner { text-align: center; }
+    .pres-pre {
+      font-family: var(--font-b);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.82;
+      color: rgba(246,236,218,.45);
+      max-width: 54ch;
+      margin: 28px auto 0;
+    }
+    .pres-title {
+      font-family: var(--font-d);
+      font-size: clamp(64px,9vw,120px);
+      font-style: italic;
+      font-weight: 700;
+      line-height: .82;
+      letter-spacing: -2.5px;
+      color: rgba(246,236,218,.95);
+      margin: 40px 0;
+    }
+    .pres-body {
+      font-family: var(--font-b);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.85;
+      color: rgba(246,236,218,.45);
+      max-width: 54ch;
+      margin: 0 auto;
+    }
+    .pres-highlight {
+      display: inline-flex;
+      margin: 36px auto 0;
+      padding: 18px 36px;
+      font-family: var(--font-b);
+      font-size: 9.5px;
+      font-weight: 500;
+      letter-spacing: .52em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: .75px solid rgba(198,154,92,.35);
+    }
+
+    /* ══════════════════════════════════════════
+       ACT 8 — LOS TRES DÍAS
+    ══════════════════════════════════════════ */
+    #tres-dias {
+      background: var(--ivory);
+      padding: 140px 0;
+    }
+    .timeline {
+      position: relative;
+      margin-top: 64px;
+      padding-left: 1px;
+    }
+    .timeline-spine {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 1px;
+      background: var(--c12);
+    }
+    .timeline-fill {
+      position: absolute;
+      left: 0; top: 0;
+      width: 1px;
+      background: var(--gold);
+      height: 0;
+      transition: height 2.4s var(--ease-out);
+    }
+    .timeline-fill.on { height: 100%; }
+    .dia {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 60px;
+      padding: 60px 0 60px 36px;
+      position: relative;
+    }
+    .dia::before {
+      content: '';
+      position: absolute;
+      left: -4px; top: 64px;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--ivory);
+      border: 1.5px solid var(--gold);
+    }
+    .dia-num-wrap { display: flex; flex-direction: column; gap: 6px; }
+    .dia-num-lbl { font-family: var(--font-b); font-size: 8px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+    .dia-num-big {
+      font-family: var(--font-d);
+      font-size: 40px;
+      font-style: italic;
+      font-weight: 700;
+      color: var(--choco);
+      line-height: 1;
+    }
+    .dia-content { display: flex; flex-direction: column; gap: 16px; }
+    .dia-title {
+      font-family: var(--font-d);
+      font-size: clamp(20px,2.4vw,28px);
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.22;
+      color: var(--choco);
+    }
+    .dia-p {
+      font-family: var(--font-b);
+      font-size: 14.5px;
+      font-weight: 400;
+      line-height: 1.86;
+      color: var(--c60);
+      max-width: 60ch;
+    }
+    .dia-result {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 14px 18px;
+      background: rgba(198,154,92,.055);
+      border-left: 1.5px solid var(--gold);
+      margin-top: 6px;
+    }
+    .dia-res-lbl { font-family: var(--font-b); font-size: 7.5px; font-weight: 500; letter-spacing: .38em; text-transform: uppercase; color: var(--gold); flex-shrink: 0; padding-top: 2px; white-space: nowrap; }
+    .dia-res-txt { font-family: var(--font-b); font-size: 13px; font-weight: 400; line-height: 1.68; color: var(--c70, rgba(59,36,23,.72)); }
+
+    /* ══════════════════════════════════════════
+       ACT 9 — MATCH MAP
+    ══════════════════════════════════════════ */
+    #match-map {
+      background: var(--cream);
+      padding: 140px 0;
+    }
+    .map-artifact {
+      margin-top: 56px;
+      border: .75px solid var(--c20);
+      overflow: hidden;
+    }
+    .map-art-hd {
+      padding: 22px 36px;
+      background: var(--choco);
+      border-bottom: .5px solid rgba(246,236,218,.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .map-art-title { font-family: var(--font-b); font-size: 9px; font-weight: 500; letter-spacing: .46em; text-transform: uppercase; color: rgba(246,236,218,.88); }
+    .map-art-sub { font-family: var(--font-b); font-size: 8px; font-weight: 400; letter-spacing: .30em; text-transform: uppercase; color: rgba(246,236,218,.28); }
+    .map-el {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      border-bottom: .5px solid var(--c10, rgba(59,36,23,.10));
+    }
+    .map-el:last-child { border-bottom: none; }
+    .map-el:hover { background: rgba(198,154,92,.04); }
+    .map-el-n {
+      padding: 22px 18px;
+      border-right: .5px solid var(--c10, rgba(59,36,23,.10));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .map-n-txt { font-family: var(--font-b); font-size: 8px; font-weight: 400; letter-spacing: .26em; color: var(--gold-muted); }
+    .map-el-c { padding: 22px 28px; display: flex; flex-direction: column; gap: 5px; }
+    .map-el-title { font-family: var(--font-b); font-size: 9.5px; font-weight: 500; letter-spacing: .36em; text-transform: uppercase; color: var(--choco); }
+    .map-el-body { font-family: var(--font-b); font-size: 13px; font-weight: 400; line-height: 1.72; color: var(--c60); }
+    .map-closing {
+      margin-top: 44px;
+      font-family: var(--font-d);
+      font-size: clamp(20px,2.2vw,28px);
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.40;
+      color: var(--choco);
+    }
+
+    /* ══════════════════════════════════════════
+       ACT 10 — PARA QUIÉN ES
+    ══════════════════════════════════════════ */
+    #para-quien {
+      background: var(--ivory);
+      padding: 140px 0;
+    }
+    .ev-list { display: flex; flex-direction: column; margin: 36px 0; }
+    .ev-item {
+      display: flex;
+      gap: 20px;
+      padding: 16px 0;
+      border-bottom: .5px solid var(--c12);
+      align-items: baseline;
+    }
+    .ev-item:first-child { border-top: .5px solid var(--c12); }
+    .ev-dot { width:4px; height:4px; border-radius:50%; background:var(--gold); flex-shrink:0; margin-top:9px; }
+    .ev-txt { font-family: var(--font-b); font-size: 15px; font-weight: 400; line-height: 1.75; color: var(--c80); }
+
+    /* ══════════════════════════════════════════
+       ACT 11 — NO ES ESTO
+    ══════════════════════════════════════════ */
+    #no-es-esto {
+      background: var(--choco);
+      padding: 140px 0;
+    }
+    .not-list { display: flex; flex-direction: column; margin: 36px 0 40px; }
+    .not-item {
+      display: flex;
+      gap: 18px;
+      padding: 14px 0;
+      border-bottom: .5px solid rgba(246,236,218,.06);
+      align-items: baseline;
+    }
+    .not-item:first-child { border-top: .5px solid rgba(246,236,218,.06); }
+    .not-dash { font-family: var(--font-b); font-size: 10px; color: rgba(198,154,92,.45); flex-shrink: 0; }
+    .not-txt { font-family: var(--font-b); font-size: 14.5px; font-weight: 400; line-height: 1.68; color: rgba(246,236,218,.52); }
+
+    /* ══════════════════════════════════════════
+       ACT 12 — LA ESCENA DESEADA
+    ══════════════════════════════════════════ */
+    #escena-deseada {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .ed-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .ed-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+    .ed-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(108deg, rgba(24,15,9,.96) 38%, rgba(24,15,9,.60) 100%);
+      z-index: 1;
+    }
+    .ed-content {
+      position: relative;
+      z-index: 2;
+      padding: 120px 0;
+    }
+    .ed-lines { display: flex; flex-direction: column; gap: 24px; max-width: 380px; }
+    .ed-line {
+      font-family: var(--font-d);
+      font-size: clamp(22px,2.8vw,34px);
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.22;
+      color: rgba(246,236,218,.82);
+    }
+    .ed-final {
+      font-family: var(--font-d);
+      font-size: clamp(34px,4.5vw,56px);
+      font-style: italic;
+      font-weight: 700;
+      line-height: .96;
+      letter-spacing: -.5px;
+      color: rgba(246,236,218,.95);
+      margin-top: 12px;
+    }
+
+    /* ══════════════════════════════════════════
+       ACT 13 — OBJECIÓN
+    ══════════════════════════════════════════ */
+    #objecion {
+      background: var(--cream);
+      padding: 140px 0;
+    }
+    .obj-changes { display: flex; flex-direction: column; gap: 0; margin: 28px 0; }
+    .obj-change {
+      font-family: var(--font-d);
+      font-size: clamp(20px,2.5vw,30px);
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.28;
+      color: rgba(59,36,23,.30);
+      padding: 8px 0;
+    }
+    .obj-change.active { color: var(--choco); }
+
+    /* ══════════════════════════════════════════
+       ACT 14 — INVERSIÓN
+    ══════════════════════════════════════════ */
+    #inversion {
+      background: var(--near-black);
+      padding: 140px 0;
+    }
+    .inv-grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 80px;
+      align-items: start;
+    }
+    .inv-left { display: flex; flex-direction: column; gap: 22px; }
+    .inv-question {
+      font-family: var(--font-d);
+      font-size: clamp(22px,2.8vw,34px);
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.20;
+      color: rgba(246,236,218,.85);
+    }
+    .inv-costs { display: flex; flex-direction: column; gap: 4px; margin: 4px 0; }
+    .inv-cost-item {
+      font-family: var(--font-d);
+      font-size: clamp(17px,2vw,24px);
+      font-style: italic;
+      font-weight: 700;
+      color: rgba(246,236,218,.28);
+      line-height: 1.38;
+    }
+    .inv-card {
+      border: .75px solid rgba(246,236,218,.10);
+      background: rgba(246,236,218,.02);
+      display: flex;
+      flex-direction: column;
+    }
+    .inv-card-hd {
+      padding: 28px 32px 22px;
+      border-bottom: .5px solid rgba(246,236,218,.05);
+    }
+    .inv-card-title { font-family: var(--font-b); font-size: 8px; font-weight: 500; letter-spacing: .50em; text-transform: uppercase; color: rgba(198,154,92,.70); margin-bottom: 8px; }
+    .inv-card-prod {
+      font-family: var(--font-d);
+      font-size: clamp(26px,3.2vw,40px);
+      font-style: italic;
+      font-weight: 700;
+      color: rgba(246,236,218,.92);
+      line-height: 1.0;
+    }
+    .inv-includes { padding: 18px 32px; display: flex; flex-direction: column; }
+    .inv-inc-item { display: flex; gap: 14px; padding: 11px 0; border-bottom: .5px solid rgba(246,236,218,.04); align-items: center; }
+    .inv-inc-item:last-child { border-bottom: none; }
+    .inv-inc-dot { width:3px; height:3px; border-radius:50%; background:rgba(198,154,92,.55); flex-shrink:0; }
+    .inv-inc-txt { font-family: var(--font-b); font-size: 12.5px; font-weight: 400; line-height: 1.55; color: rgba(246,236,218,.50); }
+    .inv-price {
+      padding: 22px 32px;
+      background: rgba(198,154,92,.055);
+      border-top: .75px solid rgba(198,154,92,.18);
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .inv-curr { font-family: var(--font-b); font-size: 13px; font-weight: 400; color: rgba(246,236,218,.35); }
+    .inv-amount {
+      font-family: var(--font-d);
+      font-size: 60px;
+      font-style: italic;
+      font-weight: 700;
+      color: rgba(246,236,218,.95);
+      line-height: 1;
+    }
+    .inv-cta-group { padding: 24px 32px; display: flex; flex-direction: column; gap: 12px; }
+    .inv-secure { font-family: var(--font-b); font-size: 8.5px; font-weight: 400; letter-spacing: .28em; text-transform: uppercase; color: rgba(246,236,218,.20); text-align: center; }
+
+    /* ══════════════════════════════════════════
+       FAQ
+    ══════════════════════════════════════════ */
+    #faq {
+      background: var(--ivory);
+      padding: 120px 0;
+    }
+    .faq-list { margin-top: 48px; display: flex; flex-direction: column; }
+    .faq-item { border-bottom: .5px solid var(--c12); }
+    .faq-item:first-child { border-top: .5px solid var(--c12); }
+    .faq-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 22px 0;
+      cursor: pointer;
+      user-select: none;
+    }
+    .faq-q-txt {
+      font-family: var(--font-d);
+      font-size: clamp(16px,1.8vw,21px);
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.28;
+      color: var(--choco);
+    }
+    .faq-ico {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      position: relative;
+    }
+    .faq-ico::before, .faq-ico::after {
+      content: '';
+      position: absolute;
+      background: var(--gold-muted);
+      transition: transform .4s var(--ease-out), opacity .3s ease;
+      top: 50%; left: 50%;
+    }
+    .faq-ico::before { width:12px; height:.75px; transform: translate(-50%,-50%); }
+    .faq-ico::after  { width:.75px; height:12px; transform: translate(-50%,-50%); }
+    .faq-item.open .faq-ico::after { transform: translate(-50%,-50%) rotate(90deg); opacity: 0; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .5s var(--ease-out); }
+    .faq-a-inner { font-family: var(--font-b); font-size: 14.5px; font-weight: 400; line-height: 1.82; color: var(--c60); padding: 0 0 22px; max-width: 60ch; }
+    .faq-item.open .faq-a { max-height: 260px; }
+
+    /* ══════════════════════════════════════════
+       CIERRE FINAL
+    ══════════════════════════════════════════ */
+    #cierre {
+      background: var(--near-black);
+      padding: 160px 0;
+    }
+    .cierre-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+      text-align: center;
+    }
+    .cierre-l1 {
+      font-family: var(--font-d);
+      font-size: clamp(38px,5.5vw,72px);
+      font-style: italic;
+      font-weight: 700;
+      line-height: .90;
+      letter-spacing: -.5px;
+      color: rgba(246,236,218,.88);
+    }
+    .cierre-l2 {
+      font-family: var(--font-d);
+      font-size: clamp(38px,5.5vw,72px);
+      font-style: italic;
+      font-weight: 700;
+      line-height: .90;
+      letter-spacing: -.5px;
+      color: rgba(198,154,92,.80);
+    }
+    .cierre-sub { font-family: var(--font-b); font-size: 14px; font-weight: 400; line-height: 1.82; color: rgba(246,236,218,.38); max-width: 50ch; }
+    .cierre-info { font-family: var(--font-b); font-size: 8.5px; font-weight: 400; letter-spacing: .44em; text-transform: uppercase; color: rgba(246,236,218,.18); line-height: 2; }
+    .cierre-brand {
+      margin-top: 44px;
+      padding-top: 44px;
+      border-top: .5px solid rgba(246,236,218,.05);
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .cierre-brand-name { font-family: var(--font-b); font-size: 8px; font-weight: 400; letter-spacing: .62em; text-transform: uppercase; color: rgba(246,236,218,.18); }
+    .cierre-brand-sub { font-family: var(--font-b); font-size: 7px; font-weight: 400; letter-spacing: .40em; text-transform: uppercase; color: rgba(246,236,218,.10); }
+
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
+    footer {
+      background: #100C09;
+      padding: 56px 0;
+    }
+    .footer-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: .5px solid rgba(246,236,218,.05);
+    }
+    .footer-logo { height: 36px; width: auto; opacity: .65; }
+    .footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
+    .footer-links a { font-family: var(--font-b); font-size: 9px; font-weight: 400; letter-spacing: .36em; text-transform: uppercase; color: rgba(246,236,218,.28); transition: color .3s ease; }
+    .footer-links a:hover { color: rgba(246,236,218,.55); }
+    .footer-bottom { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
+    .footer-legal { font-family: var(--font-b); font-size: 10px; font-weight: 400; line-height: 1.75; color: rgba(246,236,218,.17); max-width: 560px; }
+    .footer-copy { font-family: var(--font-b); font-size: 9px; font-weight: 400; color: rgba(246,236,218,.17); white-space: nowrap; }
+
+    /* ══════════════════════════════════════════
+       MOBILE CTA
+    ══════════════════════════════════════════ */
+    #mob-cta {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 90;
+      background: rgba(24,15,9,.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 12px 20px;
+      border-top: .5px solid rgba(246,236,218,.06);
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      transform: translateY(100%);
+      transition: transform .5s var(--ease-out);
+    }
+    #mob-cta.show { transform: translateY(0); }
+    #mob-cta.gone { transform: translateY(100%); }
+    .mob-cta-txt { font-family: var(--font-b); font-size: 8.5px; font-weight: 400; letter-spacing: .38em; text-transform: uppercase; color: rgba(246,236,218,.55); }
+    #mob-cta-close {
+      position: absolute;
+      top: -34px; right: 14px;
+      background: rgba(24,15,9,.75);
+      color: rgba(246,236,218,.38);
+      font-size: 12px;
+      padding: 6px 9px;
+      cursor: pointer;
+      border: .5px solid rgba(246,236,218,.07);
+    }
+    .mob-cta-btn {
+      font-family: var(--font-b);
+      font-size: 8.5px;
+      font-weight: 500;
+      letter-spacing: .44em;
+      text-transform: uppercase;
+      padding: 11px 20px;
+      background: var(--gold);
+      color: var(--near-black);
+      white-space: nowrap;
+      text-align: center;
+    }
+
+    /* ══════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .wrap, .wrap-sm, .wrap-md { padding: 0 40px; }
+      .inv-grid { grid-template-columns: 1fr; }
+      .mm-grid { grid-template-columns: 1fr; gap: 60px; }
+    }
+    @media (max-width: 768px) {
+      #hero { grid-template-columns: 1fr; }
+      .hero-right { order: -1; min-height: 48vh; }
+      .hero-left { padding: 48px 24px 80px; }
+      .hero-symbol { width: min(72%, 280px); }
+      #hdr { padding: 18px 22px; }
+      #hdr.scrolled { padding: 14px 22px; }
+      .hdr-nav { display: none; }
+      #menu-btn { display: flex; }
+      .wrap, .wrap-sm, .wrap-md { padding: 0 24px; }
+      .scene { grid-template-columns: 1fr; gap: 18px; }
+      .scene-lbl { padding-top: 0; }
+      .sig-grid { grid-template-columns: repeat(2,1fr); }
+      .dia { grid-template-columns: 1fr; gap: 16px; padding-left: 22px; }
+      .footer-top { flex-direction: column; gap: 28px; }
+      .footer-bottom { flex-direction: column; gap: 12px; }
+      #mob-cta { display: flex; }
+    }
+    /* ══════════════════════════════════════════
+       MARQUEE STRIP
+    ══════════════════════════════════════════ */
+    .marquee-wrap {
+      overflow: hidden;
+      background: var(--choco);
+      padding: 18px 0;
+      border-top: .5px solid rgba(246,236,218,.07);
+      border-bottom: .5px solid rgba(246,236,218,.07);
+    }
+    .marquee-track {
+      display: flex;
+      white-space: nowrap;
+      animation: marquee 36s linear infinite;
+      width: max-content;
+    }
+    .marquee-item {
+      font-family: var(--font-b);
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: .46em;
+      text-transform: uppercase;
+      color: rgba(246,236,218,.42);
+      padding: 0 36px;
+    }
+    .marquee-sep {
+      font-family: var(--font-b);
+      font-size: 9px;
+      color: rgba(198,154,92,.50);
+      padding: 0 4px;
+      letter-spacing: 0;
+    }
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ══════════════════════════════════════════
+       PHOTO BREAK SECTIONS
+    ══════════════════════════════════════════ */
+    .photo-break {
+      position: relative;
+      height: clamp(360px, 55vw, 580px);
+      overflow: hidden;
+    }
+    .photo-break img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .photo-break-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .pb-left   { background: linear-gradient(95deg, rgba(24,15,9,.82) 30%, rgba(24,15,9,.28) 100%); }
+    .pb-center { background: linear-gradient(180deg, rgba(24,15,9,.55) 0%, rgba(24,15,9,.20) 55%, rgba(24,15,9,.72) 100%); }
+    .photo-break-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      padding: 52px 72px;
+      z-index: 2;
+    }
+    .pb-quote {
+      max-width: 260px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .pb-q-mark {
+      font-family: var(--font-d);
+      font-size: 90px;
+      line-height: .6;
+      color: rgba(198,154,92,.35);
+      font-style: italic;
+    }
+    .pb-q-text {
+      font-family: var(--font-d);
+      font-size: clamp(22px, 2.8vw, 34px);
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.20;
+      color: rgba(246,236,218,.90);
+    }
+    .pb-q-attr {
+      font-family: var(--font-b);
+      font-size: 8px;
+      font-weight: 400;
+      letter-spacing: .50em;
+      text-transform: uppercase;
+      color: rgba(198,154,92,.65);
+    }
+    .photo-break.landscape {
+      height: clamp(260px, 40vw, 420px);
+    }
+    .photo-break.landscape img {
+      object-position: center 60%;
+    }
+    .pb-center-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      text-align: center;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* ══════════════════════════════════════════
+       STATS BREAK
+    ══════════════════════════════════════════ */
+    .stats-break {
+      background: var(--near-black);
+      padding: 80px 0;
+      border-top: .5px solid rgba(246,236,218,.04);
+      border-bottom: .5px solid rgba(246,236,218,.04);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      text-align: center;
+    }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 24px 20px;
+      border-right: .5px solid rgba(246,236,218,.05);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-n {
+      font-family: var(--font-d);
+      font-size: clamp(56px, 8vw, 100px);
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1;
+      color: rgba(246,236,218,.88);
+    }
+    .stat-lbl {
+      font-family: var(--font-b);
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: .48em;
+      text-transform: uppercase;
+      color: rgba(198,154,92,.78);
+    }
+    .stat-desc {
+      font-family: var(--font-b);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(246,236,218,.34);
+      margin-top: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .photo-break-content { padding: 36px 24px; }
+      .marquee-track { animation-duration: 24s; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .rv, .rv-fade, .rv-up, .lg, .bp, .hero-title-inner, .timeline-fill {
+        opacity: 1; transform: none; transition: none;
+        stroke-dashoffset: 0; height: 100%; width: 40px;
+      }
+      @keyframes float { 0%,100% { transform: none; } }
+      .marquee-track { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ════════════════════════════════════ -->
+<nav id="hdr" role="navigation" aria-label="Navegación principal">
+  <a href="#hero" class="hdr-wordmark" aria-label="The Match — inicio">THE MATCH™</a>
+  <div class="hdr-nav" role="menubar">
+    <a href="#presentacion" role="menuitem">La experiencia</a>
+    <a href="#tres-dias" role="menuitem">Los tres días</a>
+    <a href="#para-quien" role="menuitem">Para quién es</a>
+  </div>
+  <a href="https://pay.hotmart.com/B106815566L" class="hdr-cta btn" id="hdr-cta" aria-label="Entrar a The Match">ENTRAR A THE MATCH</a>
+  <button id="menu-btn" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ══ MOBILE MENU ════════════════════════════════ -->
+<div id="mob-menu" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+  <button id="mob-close" aria-label="Cerrar menú">✕</button>
+  <a href="#presentacion">La experiencia</a>
+  <a href="#tres-dias">Los tres días</a>
+  <a href="#para-quien">Para quién es</a>
+  <a href="https://pay.hotmart.com/B106815566L" class="btn btn-light" id="mob-menu-cta">ENTRAR A THE MATCH</a>
+</div>
+
+<main>
+
+<!-- ══ ACT 1 — EL ESPEJO ══════════════════════════ -->
+<section id="hero" aria-labelledby="hero-heading">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-left">
+    <p class="hero-eye rv">THE MATCH™</p>
+    <h1 id="hero-heading">
+      <span class="hero-title-reveal">
+        <span class="hero-title-inner" aria-label="Tu negocio todavía está presentando una versión de ti…">
+          Tu negocio todavía<br>está presentando<br>una versión de ti…
+        </span>
+      </span>
+      <span class="hero-title-reveal" style="margin-top:6px;">
+        <span class="hero-title-inner hero-title-b">…que ya no existe.</span>
+      </span>
+    </h1>
+    <p class="hero-sub rv d2">Has crecido. Tu negocio debería empezar a notarlo.</p>
+    <p class="hero-meta rv d3">Una experiencia intensiva de tres días · Lindsy Torres</p>
+    <div class="hero-cta-wrap rv d4">
+      <a href="https://pay.hotmart.com/B106815566L" class="btn btn-light" id="hero-cta">QUIERO ENTRAR A THE MATCH</a>
+      <p class="hero-tag">26, 27 y 28 de agosto &nbsp;·&nbsp; En vivo &nbsp;·&nbsp; USD $57</p>
+    </div>
+  </div>
+  <div class="hero-right" aria-hidden="true">
+    <div class="hero-symbol-wrap rv-fade">
+      <img class="hero-symbol" src="public/assets/logo-match.png" alt="Símbolo oficial de The Match — dos paneles que se abren como un libro" loading="eager">
+    </div>
+  </div>
+</section>
+
+<!-- ══ ACT 2 — LA INCOMODIDAD ════════════════════ -->
+<section id="inco" aria-labelledby="inco-heading">
+  <div class="wrap-sm">
+    <div class="ed-seq">
+
+      <div class="ed-block rv">
+        <p class="ed-stmt">Hay mujeres que necesitan aprender a vender.</p>
+      </div>
+
+      <div class="ed-pause rv" aria-hidden="true"></div>
+
+      <div class="ed-block rv">
+        <p class="ed-stmt">Y hay otras que ya venden.</p>
+        <p class="ed-body">Ya tienen clientes. Ya construyeron algo. Ya acumularon experiencia.</p>
+      </div>
+
+      <div class="ed-block rv">
+        <p class="ed-stmt">Pero sienten una incomodidad que no saben explicar.</p>
+      </div>
+
+      <div class="ed-pause rv" aria-hidden="true"></div>
+
+      <div class="ed-block rv">
+        <p class="ed-stmt dim">No es que su negocio se vea mal.</p>
+        <p class="ed-stmt">Es que ya no se parece a ellas.</p>
+      </div>
+
+      <div class="ed-pause rv" aria-hidden="true"></div>
+
+      <div class="ed-block rv">
+        <p class="ed-body">Cuando hablas en una reunión, tu nivel se entiende.</p>
+        <p class="ed-body">Cuando alguien entra a tu negocio desde afuera…</p>
+        <p class="ed-stmt">no siempre.</p>
+      </div>
+
+      <div class="hl-block rv">
+        <p class="hl-text">El problema no está en tu nivel. Está en la distancia entre quién eres hoy y la conclusión que tu negocio está provocando.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ ACT 3 — LAS ESCENAS ════════════════════════ -->
+<section id="escenas" aria-labelledby="escenas-heading">
+  <div class="wrap">
+    <div class="escenas-hd">
+      <p class="lbl rv">Las escenas que ya conoces</p>
+    </div>
+
+    <article class="scene rv">
+      <p class="scene-lbl">Una reunión.</p>
+      <div class="scene-body">
+        <h3 class="scene-title">Entras a una conversación.</h3>
+        <p class="scene-p">Hablas durante veinte minutos. La persona frente a ti escucha, se sorprende y finalmente dice: "No tenía idea de que hacías todo esto."</p>
+        <blockquote class="scene-closing">No fue que en veinte minutos te volvieras más brillante. Fue que tu negocio nunca se los había mostrado.</blockquote>
+      </div>
+    </article>
+
+    <article class="scene rv">
+      <p class="scene-lbl">Tus mejores clientes.</p>
+      <div class="scene-body">
+        <h3 class="scene-title">Tus mejores clientes entienden perfectamente por qué trabajan contigo.</h3>
+        <p class="scene-p">Conocen tu criterio. Saben cómo piensas. Saben lo que ocurre cuando entras en una empresa.</p>
+        <p class="scene-p">Las personas nuevas todavía no han recibido suficientes señales para llegar a la misma conclusión.</p>
+      </div>
+    </article>
+
+    <article class="scene rv">
+      <p class="scene-lbl">Tu comunicación.</p>
+      <div class="scene-body">
+        <h3 class="scene-title">Hablas de una manera en vivo.</h3>
+        <p class="scene-p">Te expresas con profundidad en una reunión. Ves cosas que otras personas no ven.</p>
+        <p class="scene-p">Pero tus piezas de contenido, tu bio, tu oferta o tus fotografías siguen contando una historia más pequeña.</p>
+      </div>
+    </article>
+
+    <article class="scene rv">
+      <p class="scene-lbl">Todo lo que ya intentaste.</p>
+      <div class="scene-body">
+        <div class="scene-list">
+          <div class="scene-list-item"><span class="scene-list-dash">—</span><span class="scene-list-txt">Cambiaste el logo.</span></div>
+          <div class="scene-list-item"><span class="scene-list-dash">—</span><span class="scene-list-txt">Reescribiste la bio.</span></div>
+          <div class="scene-list-item"><span class="scene-list-dash">—</span><span class="scene-list-txt">Hiciste nuevas fotografías.</span></div>
+          <div class="scene-list-item"><span class="scene-list-dash">—</span><span class="scene-list-txt">Publicaste más.</span></div>
+          <div class="scene-list-item"><span class="scene-list-dash">—</span><span class="scene-list-txt">Contrataste contenido.</span></div>
+          <div class="scene-list-item"><span class="scene-list-dash">—</span><span class="scene-list-txt">Organizaste el feed.</span></div>
+          <div class="scene-list-item"><span class="scene-list-dash">—</span><span class="scene-list-txt">Intentaste sonar más profesional.</span></div>
+        </div>
+        <p class="scene-p" style="margin-top:20px;">Y aun así… algo continúa sin coincidir.</p>
+        <blockquote class="scene-closing">Porque el problema nunca fue una sola pieza. Era la conversación completa.</blockquote>
+      </div>
+    </article>
+    <p class="bridge-line rv">Y antes de cambiar una sola pieza más, <em>necesitas ver la conversación completa que tu negocio ya está sosteniendo con el mercado.</em></p>
+  </div>
+</section>
+
+<!-- ══ MARQUEE 1 ════════════════════════════════ -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">The Match™</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Legacy Method™</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Lindsy Torres</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Primera Edición</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">3 Días En Vivo</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">USD $57</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">The Match™</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Legacy Method™</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Lindsy Torres</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Primera Edición</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">3 Días En Vivo</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">USD $57</span><span class="marquee-sep">◆</span>
+  </div>
+</div>
+
+<!-- ══ ACT 4 — TU NEGOCIO ESTÁ HABLANDO ═════════ -->
+<section id="signals" aria-labelledby="signals-heading">
+  <div class="wrap-md">
+    <div class="signals-hd">
+      <p class="lbl lbl-d rv">Lo que el mercado recibe</p>
+      <h2 id="signals-heading" class="rv d1" style="font-family:var(--font-d);font-size:clamp(32px,4vw,52px);font-style:italic;font-weight:700;line-height:1.06;color:rgba(246,236,218,.92);margin:18px 0 22px;">Toda empresa produce<br>una conclusión.</h2>
+      <p class="signals-body-txt rv d2">El mercado no puede leer tu mente. Solo puede interpretar las señales que recibe.</p>
+    </div>
+    <div class="sig-grid" role="list" aria-label="Señales que envía tu negocio">
+      <div class="sig-item" role="listitem"><p class="sig-word">Bio</p></div>
+      <div class="sig-item" role="listitem"><p class="sig-word">Oferta</p></div>
+      <div class="sig-item" role="listitem"><p class="sig-word">Contenido</p></div>
+      <div class="sig-item" role="listitem"><p class="sig-word">Lenguaje</p></div>
+      <div class="sig-item" role="listitem"><p class="sig-word">Fotografías</p></div>
+      <div class="sig-item" role="listitem"><p class="sig-word">Ventas</p></div>
+      <div class="sig-item" role="listitem"><p class="sig-word">Experiencia</p></div>
+      <div class="sig-item" role="listitem"><p class="sig-word">Presencia</p></div>
+    </div>
+    <div class="sig-connector" aria-hidden="true"><div class="sig-line"></div></div>
+    <div class="sig-conclusion" aria-label="Conclusión del mercado">
+      <p class="sig-conc-lbl">Conclusión del mercado</p>
+      <p class="sig-conc-text">Todo está enseñando a las personas<br>cómo verte.</p>
+    </div>
+    <div class="sig-question rv">
+      <p class="sig-q-text">¿Es esa la conclusión correcta?</p>
+    </div>
+    <div class="hl-block rv d2" style="margin-top:44px;background:rgba(198,154,92,.09);">
+      <p class="hl-text" style="color:rgba(246,236,218,.92);">Durante The Match vamos a revisar cada una de esas ocho señales, una por una — bio, oferta, contenido, lenguaje, fotografías, ventas, experiencia y presencia — hasta que sepas con exactitud cuáles ya representan tu nivel real y cuáles todavía están hablando de una versión que ya superaste.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ACT 5 — THE MISMATCH ══════════════════════ -->
+<section id="mismatch" aria-labelledby="mismatch-heading">
+  <div class="wrap">
+    <div class="mm-grid">
+      <div class="mm-visual" aria-hidden="true">
+        <div class="mm-figure"></div>
+        <div class="mm-shadow"></div>
+        <p class="mm-lbl-a">La mujer</p>
+        <p class="mm-lbl-b">El negocio</p>
+      </div>
+      <div class="mm-text">
+        <p class="lbl rv">The Mismatch™</p>
+        <h2 id="mismatch-heading" class="rv d1" style="font-family:var(--font-d);font-size:clamp(28px,3.5vw,44px);font-style:italic;font-weight:700;line-height:1.10;color:var(--choco);">Una mujer puede evolucionar más rápido que la empresa que construyó.</h2>
+        <div class="mm-body rv d2">
+          <p>La oferta pudo haber funcionado. La comunicación pudo haber atraído clientes. El negocio pudo haber sido correcto para la mujer que eras en ese momento.</p>
+        </div>
+        <p class="mm-body rv d3">Pero tú seguiste creciendo. Acumulaste experiencia. Elevaste tus estándares. Desarrollaste criterio. Cambiaste la manera en la que entiendes tu industria.</p>
+        <p class="mm-body rv d4" style="font-weight:400;color:var(--choco);">La mujer llegó primero.<br>Ahora el negocio tiene que alcanzarla.</p>
+        <div class="mm-def rv d5">
+          <p class="mm-def-title">THE MISMATCH™</p>
+          <p class="mm-def-body">La distancia entre el nivel real de una mujer y la conclusión que su negocio está provocando en el mercado.</p>
+        </div>
+        <p class="mm-final rv d6">La mujer cambió.<br>La imagen proyectada todavía no.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ACT 6 — EL PUENTE ══════════════════════════ -->
+<section id="puente" aria-labelledby="puente-heading">
+  <div class="wrap-md">
+    <p class="lbl rv">La preferencia</p>
+    <h2 id="puente-heading" class="rv d1" style="font-family:var(--font-d);font-size:clamp(32px,4.5vw,58px);font-style:italic;font-weight:700;line-height:1.02;color:var(--choco);margin:18px 0;">La preferencia no aparece.<br>Se construye.</h2>
+
+    <div class="bridge-wrap rv-fade">
+      <!-- Elegant bridge SVG — the gap fills with gold as you scroll -->
+      <svg class="bridge-svg" viewBox="0 0 800 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+        <!-- Left pillar -->
+        <rect x="60" y="20" width="3" height="160" fill="#3B2417" opacity=".40"/>
+        <!-- Right pillar -->
+        <rect x="737" y="20" width="3" height="160" fill="#3B2417" opacity=".40"/>
+        <!-- Left cable arc -->
+        <path d="M 63 38 Q 230 10 380 70" stroke="#3B2417" stroke-width="1.4" fill="none" opacity=".34"/>
+        <!-- Right cable arc -->
+        <path d="M 420 70 Q 570 10 737 38" stroke="#3B2417" stroke-width="1.4" fill="none" opacity=".34"/>
+        <!-- Left deck -->
+        <line x1="63" y1="130" x2="370" y2="130" stroke="#3B2417" stroke-width="1.7" opacity=".38"/>
+        <!-- Right deck -->
+        <line x1="430" y1="130" x2="737" y2="130" stroke="#3B2417" stroke-width="1.7" opacity=".38"/>
+        <!-- Gap label -->
+        <text x="400" y="115" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" font-weight="700" letter-spacing="3" fill="rgba(198,154,92,.65)" text-transform="uppercase">GAP</text>
+        <!-- Left vertical suspenders -->
+        <line x1="160" y1="27" x2="160" y2="130" stroke="#3B2417" stroke-width=".7" opacity=".24"/>
+        <line x1="240" y1="18" x2="240" y2="130" stroke="#3B2417" stroke-width=".7" opacity=".24"/>
+        <line x1="310" y1="14" x2="310" y2="130" stroke="#3B2417" stroke-width=".7" opacity=".24"/>
+        <!-- Right vertical suspenders -->
+        <line x1="490" y1="14" x2="490" y2="130" stroke="#3B2417" stroke-width=".7" opacity=".24"/>
+        <line x1="560" y1="18" x2="560" y2="130" stroke="#3B2417" stroke-width=".7" opacity=".24"/>
+        <line x1="640" y1="27" x2="640" y2="130" stroke="#3B2417" stroke-width=".7" opacity=".24"/>
+        <!-- Golden bridge path — animated -->
+        <path class="bp" d="M 370 130 L 430 130" stroke="#C69A5C" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:22px;margin-top:0;">
+      <div class="puente-body rv">
+        <p>Se construye cada vez que tu negocio deja de comunicar desde una versión anterior… y empieza a representar correctamente a la mujer que eres hoy.</p>
+      </div>
+      <div class="puente-body rv d2">
+        <p>No necesitas gustarle a todo el mercado. Necesitas enviar señales suficientemente claras para que las personas correctas puedan reconocerte, preferirte y entrar a tus ofertas con una percepción distinta de tu valor.</p>
+      </div>
+      <div class="hl-block rv d3" style="max-width:580px;">
+        <p class="hl-text">La preferencia es un puente. Y la coherencia es lo que permite cruzarlo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ACT 7 — PRESENTACIÓN DE THE MATCH ════════ -->
+<section id="presentacion" aria-labelledby="pres-heading">
+  <div class="wrap-sm pres-inner">
+    <p class="lbl lbl-d rv" style="text-align:center;">The Legacy Method™ · Lindsy Torres</p>
+    <h2 id="pres-heading" class="pres-title rv d1">THE<br>MATCH™</h2>
+    <p class="pres-pre rv d2">No existe para ayudarte a "comunicar mejor". Eso sería demasiado pequeño.</p>
+    <p class="pres-body rv d3">Existe para que puedas reconocer dónde tu negocio dejó de representar correctamente el nivel de la mujer en la que ya te convertiste.</p>
+    <p class="pres-body rv d4" style="margin-top:16px;">Durante tres días vas a aprender a leer las señales que tu negocio está enviando, reconocer qué conclusión está facilitando y localizar la primera ruptura que necesita ser intervenida.</p>
+    <p class="pres-body rv d5" style="margin-top:16px;">No vas a reconstruir toda tu empresa en tres días. Vas a conseguir algo que tiene que ocurrir antes:</p>
+    <div class="pres-highlight rv d6">VERLA CORRECTAMENTE.</div>
+    <p class="pres-body rv" style="margin-top:28px;color:rgba(246,236,218,.60);">MATCH te enseña a ver la distancia.</p>
+  </div>
+</section>
+
+<!-- ══ FOTO BREAK 1 — LINDSY STANDING ════════════ -->
+<div class="photo-break">
+  <img src="public/assets/lindsy-standing.jpg" alt="Lindsy Torres — directora de The Legacy Method" loading="lazy" style="object-position: center 28%;">
+  <div class="photo-break-overlay pb-left" aria-hidden="true"></div>
+  <div class="photo-break-content">
+    <div class="pb-quote rv">
+      <p class="pb-q-mark">"</p>
+      <p class="pb-q-text">La mujer llegó primero.<br>Ahora es el turno<br>del negocio.</p>
+      <p class="pb-q-attr">Lindsy Torres · The Legacy Method™</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ACT 8 — LOS TRES DÍAS ══════════════════════ -->
+<section id="tres-dias" aria-labelledby="dias-heading">
+  <div class="wrap">
+    <p class="lbl rv">La experiencia · 26, 27 y 28 de agosto</p>
+    <h2 id="dias-heading" class="rv d1" style="font-family:var(--font-d);font-size:clamp(30px,4vw,50px);font-style:italic;font-weight:700;line-height:1.06;color:var(--choco);margin:18px 0 0;">Un recorrido diseñado<br>para producir una lectura.</h2>
+    <div class="timeline">
+      <div class="timeline-spine" aria-hidden="true"></div>
+      <div class="timeline-fill" aria-hidden="true"></div>
+
+      <article class="dia rv">
+        <div class="dia-num-wrap">
+          <p class="dia-num-lbl">Día · 26 Ago</p>
+          <p class="dia-num-big">01</p>
+        </div>
+        <div class="dia-content">
+          <h3 class="dia-title">Tu negocio está enseñando al mercado cómo verte.</h3>
+          <p class="dia-p">Vas a descubrir que tu bio, tu oferta, tu contenido, tus fotografías, tu lenguaje, tu experiencia y tu forma de vender no son piezas aisladas. Son señales. Y esas señales están construyendo una conclusión sobre ti antes de que tengas la oportunidad de entrar a la conversación.</p>
+          <div class="dia-result">
+            <p class="dia-res-lbl">Al terminar</p>
+            <p class="dia-res-txt">Reconocerás, señal por señal, qué está enseñando hoy tu negocio cuando tú no estás presente para explicarlo.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="dia rv d1">
+        <div class="dia-num-wrap">
+          <p class="dia-num-lbl">Día · 27 Ago</p>
+          <p class="dia-num-big">02</p>
+        </div>
+        <div class="dia-content">
+          <h3 class="dia-title">La distancia que ya no vas a poder ignorar.</h3>
+          <p class="dia-p">Vas a entender por qué esa sensación de "mi negocio ya no se parece a mí" no era falta de gratitud, disciplina o claridad. Era información.</p>
+          <p class="dia-p">Aquí vas a observar la relación entre la mujer que eres hoy, lo que tu negocio está comunicando y la conclusión que el mercado puede estar construyendo.</p>
+          <div class="dia-result">
+            <p class="dia-res-lbl">Al terminar</p>
+            <p class="dia-res-txt">Identificarás una primera hipótesis de The Mismatch.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="dia rv d2">
+        <div class="dia-num-wrap">
+          <p class="dia-num-lbl">Día · 28 Ago</p>
+          <p class="dia-num-big">03</p>
+        </div>
+        <div class="dia-content">
+          <h3 class="dia-title">El mapa de tu siguiente etapa.</h3>
+          <p class="dia-p">Vas a construir tu MATCH MAP™ para organizar quién eres hoy, qué está diciendo tu negocio, qué está concluyendo el mercado, dónde vive la distancia y qué necesita empezar a volverse obvio sobre ti.</p>
+          <p class="dia-p">No vas a salir con cincuenta tareas. Vas a salir con una lectura.</p>
+          <div class="dia-result">
+            <p class="dia-res-lbl">Al terminar</p>
+            <p class="dia-res-txt">Un mapa claro para reconocer la ruptura principal y la dirección que tu negocio necesita comenzar a construir.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ACT 9 — MATCH MAP ══════════════════════════ -->
+<section id="match-map" aria-labelledby="map-heading">
+  <div class="wrap-md">
+    <p class="lbl rv">El activo central</p>
+    <h2 id="map-heading" class="rv d1" style="font-family:var(--font-d);font-size:clamp(30px,4vw,50px);font-style:italic;font-weight:700;line-height:1.04;color:var(--choco);margin:18px 0 8px;">Al finalizar The Match,<br>tendrás tu MATCH MAP™.</h2>
+    <div class="map-artifact rv d2" role="region" aria-label="Los cinco elementos del Match Map">
+      <div class="map-art-hd">
+        <p class="map-art-title">MATCH MAP™</p>
+        <p class="map-art-sub">Legacy Method™ · Lindsy Torres</p>
+      </div>
+      <div class="map-el">
+        <div class="map-el-n"><p class="map-n-txt">01</p></div>
+        <div class="map-el-c">
+          <p class="map-el-title">Who You Are Now</p>
+          <p class="map-el-body">Quién eres hoy dentro de tu industria, qué criterio desarrollaste y qué entienden tus mejores clientes después de trabajar contigo.</p>
+        </div>
+      </div>
+      <div class="map-el">
+        <div class="map-el-n"><p class="map-n-txt">02</p></div>
+        <div class="map-el-c">
+          <p class="map-el-title">What Your Business Is Saying</p>
+          <p class="map-el-body">Lo que tu oferta, comunicación, experiencia, lenguaje, contenido y presencia están comunicando realmente.</p>
+        </div>
+      </div>
+      <div class="map-el">
+        <div class="map-el-n"><p class="map-n-txt">03</p></div>
+        <div class="map-el-c">
+          <p class="map-el-title">The Market Conclusion</p>
+          <p class="map-el-body">La conclusión razonable a la que una persona nueva puede llegar desde las señales disponibles.</p>
+        </div>
+      </div>
+      <div class="map-el">
+        <div class="map-el-n"><p class="map-n-txt">04</p></div>
+        <div class="map-el-c">
+          <p class="map-el-title">The Mismatch</p>
+          <p class="map-el-body">La distancia entre tu nivel real y la percepción que tu negocio está facilitando.</p>
+        </div>
+      </div>
+      <div class="map-el">
+        <div class="map-el-n"><p class="map-n-txt">05</p></div>
+        <div class="map-el-c">
+          <p class="map-el-title">The Match Direction</p>
+          <p class="map-el-body">Lo que necesita empezar a volverse obvio sobre ti y la dirección hacia la que debe moverse tu negocio.</p>
+        </div>
+      </div>
+    </div>
+    <p class="map-closing rv d3">The Match no termina con una lista de tareas.<br>Termina con una dirección que ya no puedes desver.</p>
+    <p class="bridge-line rv d4">Pero antes de mostrarte ese mapa completo, <em>necesitas saber si esta experiencia fue diseñada para ti.</em></p>
+  </div>
+</section>
+
+<!-- ══ STATS BREAK ════════════════════════════════ -->
+<div class="stats-break rv-fade" aria-label="Datos de la experiencia">
+  <div class="wrap stats-grid">
+    <div class="stat-item">
+      <p class="stat-n">3</p>
+      <p class="stat-lbl">Días</p>
+      <p class="stat-desc">sesiones en vivo</p>
+    </div>
+    <div class="stat-item">
+      <p class="stat-n">$57</p>
+      <p class="stat-lbl">USD</p>
+      <p class="stat-desc">inversión total</p>
+    </div>
+    <div class="stat-item">
+      <p class="stat-n">1</p>
+      <p class="stat-lbl">Edición</p>
+      <p class="stat-desc">primera generación</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ACT 10 — PARA QUIÉN ES ════════════════════ -->
+<section id="para-quien" aria-labelledby="paraquien-heading">
+  <div class="wrap-sm">
+    <p class="lbl rv">Perfil</p>
+    <h2 id="paraquien-heading" class="rv d1" style="font-family:var(--font-d);font-size:clamp(28px,3.5vw,44px);font-style:italic;font-weight:700;line-height:1.10;color:var(--choco);margin:18px 0 8px;">The Match no es para una mujer que necesita que alguien le diga que tiene potencial.</h2>
+    <p class="rv d2" style="font-family:var(--font-d);font-size:clamp(22px,2.5vw,30px);font-style:italic;font-weight:700;line-height:1.20;color:var(--c60);margin-bottom:0;">Es para una mujer que ya tiene evidencia.</p>
+    <div class="ev-list rv d3" role="list">
+      <div class="ev-item" role="listitem"><div class="ev-dot" aria-hidden="true"></div><p class="ev-txt">Ya vendiste.</p></div>
+      <div class="ev-item" role="listitem"><div class="ev-dot" aria-hidden="true"></div><p class="ev-txt">Ya trabajaste con clientes.</p></div>
+      <div class="ev-item" role="listitem"><div class="ev-dot" aria-hidden="true"></div><p class="ev-txt">Ya tomaste decisiones difíciles.</p></div>
+      <div class="ev-item" role="listitem"><div class="ev-dot" aria-hidden="true"></div><p class="ev-txt">Ya atravesaste diferentes etapas.</p></div>
+      <div class="ev-item" role="listitem"><div class="ev-dot" aria-hidden="true"></div><p class="ev-txt">Ya desarrollaste una mirada propia.</p></div>
+      <div class="ev-item" role="listitem"><div class="ev-dot" aria-hidden="true"></div><p class="ev-txt">Ya eres mejor en lo que haces que cuando construiste la versión actual de tu negocio.</p></div>
+    </div>
+    <div class="rv d4" style="margin-top:8px;">
+      <p style="font-family:var(--font-b);font-size:15px;font-weight:400;line-height:1.85;color:var(--c60);">El problema no es que no tengas nivel. El problema es que el mercado no necesariamente está recibiendo suficientes señales para llegar a la misma conclusión que una persona alcanza cuando se sienta frente a ti.</p>
+    </div>
+    <div class="hl-block rv d5" style="margin-top:32px;">
+      <p class="hl-text">MATCH no es para una mujer que cree que tiene nivel. Es para una mujer que tiene evidencia de evolución.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOTO BREAK 2 — LINDSY PARIS ═══════════════ -->
+<div class="photo-break landscape">
+  <img src="public/assets/lindsy-paris.jpg" alt="Lindsy Torres en París" loading="lazy" style="object-position: center 55%;">
+  <div class="photo-break-overlay pb-center" aria-hidden="true"></div>
+  <div class="pb-center-content">
+    <p class="lbl lbl-d rv" style="color:rgba(198,154,92,.65);">El nivel ya existe</p>
+    <p class="rv d1" style="font-family:var(--font-d);font-size:clamp(28px,4vw,52px);font-style:italic;font-weight:700;line-height:1.06;color:rgba(246,236,218,.92);text-align:center;">El trabajo es que<br>tu negocio lo refleje.</p>
+  </div>
+</div>
+
+<!-- ══ ACT 11 — NO ES ESTO ════════════════════════ -->
+<section id="no-es-esto" aria-labelledby="noesesto-heading">
+  <div class="wrap-sm" style="color:var(--ivory);">
+    <p class="lbl lbl-d rv">Aclaraciones</p>
+    <h2 id="noesesto-heading" class="rv d1" style="font-family:var(--font-d);font-size:clamp(28px,3.5vw,44px);font-style:italic;font-weight:700;line-height:1.10;color:rgba(246,236,218,.90);margin:18px 0 0;">The Match no es:</h2>
+    <div class="not-list rv d2" role="list">
+      <div class="not-item" role="listitem"><span class="not-dash">—</span><span class="not-txt">un curso de branding;</span></div>
+      <div class="not-item" role="listitem"><span class="not-dash">—</span><span class="not-txt">una auditoría de Instagram;</span></div>
+      <div class="not-item" role="listitem"><span class="not-dash">—</span><span class="not-txt">una clase para elegir colores;</span></div>
+      <div class="not-item" role="listitem"><span class="not-dash">—</span><span class="not-txt">un reto de contenido;</span></div>
+      <div class="not-item" role="listitem"><span class="not-dash">—</span><span class="not-txt">una mentoría para descubrir tu propósito;</span></div>
+      <div class="not-item" role="listitem"><span class="not-dash">—</span><span class="not-txt">una promesa de reposicionamiento completo en tres días;</span></div>
+      <div class="not-item" role="listitem"><span class="not-dash">—</span><span class="not-txt">una versión pequeña de una mentoría superior;</span></div>
+      <div class="not-item" role="listitem"><span class="not-dash">—</span><span class="not-txt">una experiencia para mujeres que todavía están intentando descubrir si quieren construir un negocio.</span></div>
+    </div>
+    <p class="rv d3" style="font-family:var(--font-b);font-size:15px;font-weight:400;line-height:1.85;color:rgba(246,236,218,.48);">No vamos a empezar cambiando cómo se ve tu negocio. Vamos a empezar entendiendo qué conclusión está produciendo y dónde dejó de representar el nivel que ya alcanzaste.</p>
+  </div>
+</section>
+
+<!-- ══ ACT 12 — LA ESCENA DESEADA ════════════════ -->
+<section id="escena-deseada" aria-labelledby="deseada-heading">
+  <div class="ed-bg">
+    <img src="public/assets/lindsy-seated.jpg" alt="Lindsy Torres en un lobby sofisticado" loading="lazy">
+  </div>
+  <div class="ed-overlay" aria-hidden="true"></div>
+  <div class="ed-content wrap">
+    <div class="ed-lines">
+      <h2 id="deseada-heading" class="rv" style="font-family:var(--font-d);font-size:clamp(24px,2.8vw,36px);font-style:italic;font-weight:700;line-height:1.10;color:rgba(246,236,218,.55);margin-bottom:6px;">Imagina entrar a una reunión…</h2>
+      <p class="ed-line rv d1">…y sentir que tu negocio ya hizo parte del trabajo antes de que tú llegaras.</p>
+      <p class="ed-line rv d2">Imagina que una persona nueva pueda reconocer tu criterio antes de escucharte durante veinte minutos.</p>
+      <p class="ed-line rv d3">Imagina dejar de explicar desde cero por qué eres diferente.</p>
+      <p class="ed-line rv d4">Imagina que tu contenido, tu oferta, tu lenguaje, tus fotografías y tu manera de vender estén contando la misma historia.</p>
+      <p class="ed-line rv d5">Imagina mirar tu negocio… y reconocerlo.</p>
+      <p class="ed-final rv d6">Eso es The Match.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ACT 13 — OBJECIÓN ══════════════════════════ -->
+<section id="objecion" aria-labelledby="objecion-heading">
+  <div class="wrap-sm">
+    <p class="lbl rv">Para quien ya lo intentó</p>
+    <h2 id="objecion-heading" class="rv d1" style="font-family:var(--font-d);font-size:clamp(28px,3.5vw,44px);font-style:italic;font-weight:700;line-height:1.10;color:var(--choco);margin:18px 0 0;">Quizás ya hiciste branding.</h2>
+
+    <div class="obj-changes rv d2">
+      <p class="obj-change">Quizás ya contrataste a alguien para crear contenido.</p>
+      <p class="obj-change">Quizás ya cambiaste la bio, las fotografías o el diseño.</p>
+    </div>
+
+    <p class="rv d3" style="font-family:var(--font-b);font-size:15px;font-weight:400;line-height:1.85;color:var(--c60);margin-bottom:22px;">Pero esta vez no vamos a comenzar cambiando piezas. Vamos a comenzar entendiendo qué conclusión producen esas piezas cuando funcionan juntas.</p>
+
+    <p class="rv d4" style="font-family:var(--font-b);font-size:15px;font-weight:400;line-height:1.85;color:var(--c60);margin-bottom:28px;">Porque optimizar una señal anterior puede hacer que comuniques con mayor eficiencia una versión que ya superaste.</p>
+
+    <div class="hl-block rv d5">
+      <p class="hl-text">Antes de corregir la percepción, necesitas localizar la ruptura.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MARQUEE 2 ════════════════════════════════ -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">Quiero entrar</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">USD $57</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">3 días en vivo</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">The Match™</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Match Map™</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Primera edición</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Quiero entrar</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">USD $57</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">3 días en vivo</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">The Match™</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Match Map™</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Primera edición</span><span class="marquee-sep">◆</span>
+  </div>
+</div>
+
+<!-- ══ ACT 14 — INVERSIÓN ════════════════════════ -->
+<section id="inversion" aria-labelledby="inv-heading">
+  <div class="wrap">
+    <div class="inv-grid">
+      <div class="inv-left">
+        <p class="lbl lbl-d rv">La inversión</p>
+        <h2 id="inv-heading" class="inv-question rv d1">¿Cuánto tiempo llevas intentando hacer que tu negocio se sienta diferente?</h2>
+        <div class="inv-costs rv d2">
+          <p class="inv-cost-item">Nueva bio.</p>
+          <p class="inv-cost-item">Nuevas fotografías.</p>
+          <p class="inv-cost-item">Nuevo feed.</p>
+          <p class="inv-cost-item">Más contenido.</p>
+          <p class="inv-cost-item">Otra estrategia.</p>
+          <p class="inv-cost-item">Otra manera de explicar tu oferta.</p>
+        </div>
+        <p class="rv d3" style="font-family:var(--font-b);font-size:15px;font-weight:400;line-height:1.85;color:rgba(246,236,218,.45);">The Match no compite contra una inversión de USD $57. Compite contra seguir interviniendo piezas sin entender qué conclusión estás intentando cambiar.</p>
+      </div>
+      <div class="inv-card rv d2" role="region" aria-label="Detalles de la oferta">
+        <div class="inv-card-hd">
+          <p class="inv-card-title">THE MATCH™</p>
+          <p class="inv-card-prod">3 días<br>intensivos<br>en vivo.</p>
+        </div>
+        <div class="inv-includes" role="list" aria-label="Qué incluye">
+          <div class="inv-inc-item" role="listitem"><div class="inv-inc-dot" aria-hidden="true"></div><p class="inv-inc-txt">Acceso a las tres sesiones en vivo.</p></div>
+          <div class="inv-inc-item" role="listitem"><div class="inv-inc-dot" aria-hidden="true"></div><p class="inv-inc-txt">Revisión de las ocho señales: bio, oferta, contenido, lenguaje, fotografías, ventas, experiencia y presencia.</p></div>
+          <div class="inv-inc-item" role="listitem"><div class="inv-inc-dot" aria-hidden="true"></div><p class="inv-inc-txt">MATCH MAP™.</p></div>
+          <div class="inv-inc-item" role="listitem"><div class="inv-inc-dot" aria-hidden="true"></div><p class="inv-inc-txt">Ejercicios estratégicos de cada día.</p></div>
+          <div class="inv-inc-item" role="listitem"><div class="inv-inc-dot" aria-hidden="true"></div><p class="inv-inc-txt">Espacio de implementación.</p></div>
+          <div class="inv-inc-item" role="listitem"><div class="inv-inc-dot" aria-hidden="true"></div><p class="inv-inc-txt">Acceso a la comunidad temporal de The Match.</p></div>
+        </div>
+        <div class="inv-price" aria-label="Precio: USD 57">
+          <p class="inv-curr">USD</p>
+          <p class="inv-amount">57</p>
+        </div>
+        <div class="inv-cta-group">
+          <a href="https://pay.hotmart.com/B106815566L" class="btn btn-light" id="price-cta" style="width:100%;justify-content:center;">QUIERO ENTRAR A THE MATCH</a>
+          <p class="inv-secure" aria-live="polite">Pago seguro procesado por Hotmart.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ════════════════════════════════════════ -->
+<section id="faq" aria-labelledby="faq-heading">
+  <div class="wrap-sm">
+    <p class="lbl rv">Preguntas frecuentes</p>
+    <h2 id="faq-heading" class="rv d1" style="font-family:var(--font-d);font-size:clamp(28px,3.5vw,44px);font-style:italic;font-weight:700;line-height:1.10;color:var(--choco);margin:18px 0 0;">Lo que más preguntan</h2>
+
+    <div class="faq-list rv d2">
+
+      <div class="faq-item">
+        <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+          <p class="faq-q-txt">¿The Match es para mí si estoy comenzando?</p>
+          <div class="faq-ico" aria-hidden="true"></div>
+        </div>
+        <div class="faq-a" role="region">
+          <p class="faq-a-inner">No. The Match fue creado para mujeres que ya tienen evidencia de evolución: experiencia, ventas, clientes, criterio o una empresa que lleva tiempo en movimiento. Necesitas tener algo construido para poder reconocer dónde esa estructura dejó de representar tu nivel actual.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+          <p class="faq-q-txt">¿Voy a cambiar completamente mi marca durante los tres días?</p>
+          <div class="faq-ico" aria-hidden="true"></div>
+        </div>
+        <div class="faq-a" role="region">
+          <p class="faq-a-inner">No. The Match no promete una reconstrucción completa. Vas a aprender a reconocer qué señales está entregando tu negocio, qué conclusión pueden estar produciendo y dónde vive la primera ruptura que necesitas intervenir.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+          <p class="faq-q-txt">¿Es una auditoría de Instagram?</p>
+          <div class="faq-ico" aria-hidden="true"></div>
+        </div>
+        <div class="faq-a" role="region">
+          <p class="faq-a-inner">No. Instagram puede ser uno de los puntos de contacto que observemos, pero The Match analiza una conversación empresarial más amplia: oferta, lenguaje, contenido, experiencia, presencia, ventas, fotografía y percepción.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+          <p class="faq-q-txt">¿Necesito tener una marca personal?</p>
+          <div class="faq-ico" aria-hidden="true"></div>
+        </div>
+        <div class="faq-a" role="region">
+          <p class="faq-a-inner">No necesariamente. Puedes liderar una marca personal, una empresa de servicios, una firma, una academia, una tienda o un negocio basado en productos. Lo importante es que ya exista una trayectoria y una evolución real.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+          <p class="faq-q-txt">¿Las sesiones serán en vivo?</p>
+          <div class="faq-ico" aria-hidden="true"></div>
+        </div>
+        <div class="faq-a" role="region">
+          <p class="faq-a-inner">Sí. La primera edición de The Match se realizará en vivo los días 26, 27 y 28 de agosto, por Zoom. Si compras esta edición, además de asistir en vivo, quedará grabada para que puedas verla cuando quieras.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+          <p class="faq-q-txt">¿Recibiré las grabaciones?</p>
+          <div class="faq-ico" aria-hidden="true"></div>
+        </div>
+        <div class="faq-a" role="region">
+          <p class="faq-a-inner">Sí. Las sesiones quedarán grabadas y podrás acceder a ellas cuando quieras.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" role="button" aria-expanded="false" tabindex="0">
+          <p class="faq-q-txt">¿Cuál es la inversión?</p>
+          <div class="faq-ico" aria-hidden="true"></div>
+        </div>
+        <div class="faq-a" role="region">
+          <p class="faq-a-inner">La inversión para entrar a The Match es de USD $57.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ CIERRE FINAL ════════════════════════════════ -->
+<section id="cierre" aria-labelledby="cierre-heading">
+  <div class="wrap-sm cierre-inner">
+    <div class="divider divider-d rv" aria-hidden="true"></div>
+    <h2 id="cierre-heading">
+      <span class="cierre-l1 rv d1">La mujer llegó primero.</span>
+      <span class="cierre-l2 rv d2">Ahora es el turno<br>de su negocio.</span>
+    </h2>
+    <p class="cierre-sub rv d3">En tres días vas a aprender a reconocer las señales que tu negocio está enviando, la conclusión que pueden estar provocando y la distancia que necesitas comenzar a cerrar.</p>
+    <a href="https://pay.hotmart.com/B106815566L" class="btn btn-light rv d4" id="final-cta" style="padding:20px 52px;font-size:10px;">QUIERO ENTRAR A THE MATCH</a>
+    <p class="cierre-info rv d5">26 · 27 · 28 DE AGOSTO &nbsp;·&nbsp; EN VIVO &nbsp;·&nbsp; USD $57</p>
+    <div class="cierre-brand rv">
+      <img src="public/assets/logo-lindsy.png" alt="Lindsy Torres" style="height:48px;width:auto;opacity:.35;">
+      <p class="cierre-brand-name">THE MATCH™</p>
+      <p class="cierre-brand-sub">Created by Lindsy Torres &nbsp;·&nbsp; Legacy Method™ &nbsp;·&nbsp; The Iconic Universe™</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══ FOOTER ═════════════════════════════════════ -->
+<footer>
+  <div class="wrap footer-top">
+    <img src="public/assets/logo-lindsy.png" class="footer-logo" alt="Lindsy Torres — Estratega de Negocios">
+    <nav class="footer-links" aria-label="Links del pie de página">
+      <a href="#">Términos y condiciones</a>
+      <a href="#">Política de privacidad</a>
+      <a href="mailto:info@lindsytorres.com">Contacto</a>
+      <a href="https://instagram.com/lindsytorres" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </nav>
+  </div>
+  <div class="wrap footer-bottom">
+    <p class="footer-legal">The Match™, MATCH MAP™, The Mismatch™, Legacy Method™ y The Iconic Universe™ son conceptos y activos de propiedad intelectual de Lindsy Torres. No está permitida su reproducción, distribución o enseñanza sin autorización.</p>
+    <p class="footer-copy">&copy; <span id="year"></span> Lindsy Torres</p>
+  </div>
+</footer>
+
+<!-- ══ MOBILE CTA BAR ════════════════════════════ -->
+<div id="mob-cta" aria-live="polite" aria-label="Acceso rápido a The Match">
+  <button id="mob-cta-close" aria-label="Cerrar barra">✕</button>
+  <p class="mob-cta-txt">THE MATCH · USD $57</p>
+  <a href="https://pay.hotmart.com/B106815566L" class="mob-cta-btn" id="mob-cta-btn">ENTRAR</a>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ── Checkout URL — reemplaza con el link real de Hotmart ── */
+  const CHECKOUT = 'https://pay.hotmart.com/B106815566L';
+
+  /* ── Año dinámico ── */
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ── Analytics ── */
+  function track(name, params) {
+    try {
+      if (typeof gtag !== 'undefined') gtag('event', name, params || {});
+      if (typeof fbq !== 'undefined') fbq('trackCustom', name, params || {});
+    } catch(e) {}
+  }
+  track('view_match_page');
+
+  /* ── Hero title reveal ── */
+  setTimeout(() => {
+    document.querySelectorAll('.hero-title-inner').forEach((el, i) => {
+      setTimeout(() => el.classList.add('on'), i * 240);
+    });
+  }, 180);
+
+  /* ── Intersection Observer (reveals) ── */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('on');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.10, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.rv, .rv-fade, .rv-up, .lg, .bp, .timeline-fill').forEach(el => io.observe(el));
+
+  /* ── Header scroll ── */
+  const hdr = document.getElementById('hdr');
+  window.addEventListener('scroll', () => {
+    hdr.classList.toggle('scrolled', window.scrollY > 72);
+  }, { passive: true });
+
+  /* ── Mobile menu ── */
+  const menuBtn = document.getElementById('menu-btn');
+  const mobMenu = document.getElementById('mob-menu');
+  const mobClose = document.getElementById('mob-close');
+  function openMenu() {
+    mobMenu.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    menuBtn.setAttribute('aria-expanded', 'true');
+  }
+  function closeMenu() {
+    mobMenu.classList.remove('open');
+    document.body.style.overflow = '';
+    menuBtn.setAttribute('aria-expanded', 'false');
+  }
+  if (menuBtn) menuBtn.addEventListener('click', openMenu);
+  if (mobClose) mobClose.addEventListener('click', closeMenu);
+  if (mobMenu) mobMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  /* ── FAQ ── */
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        q.setAttribute('aria-expanded', 'true');
+        track('open_match_faq');
+      }
+    });
+    q.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); q.click(); }
+    });
+  });
+
+  /* ── Mismatch shadow animation ── */
+  const mmSection = document.getElementById('mismatch');
+  const mmShadow = document.querySelector('.mm-shadow');
+  if (mmSection && mmShadow) {
+    function updateShadow() {
+      const r = mmSection.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const progress = Math.max(0, Math.min(1, (vh * .9 - r.top) / (r.height * .8)));
+      const offset = 52 * (1 - progress);
+      const vOffset = 22 * (1 - progress);
+      mmShadow.style.setProperty('--so', offset + 'px');
+      mmShadow.style.setProperty('--sov', vOffset + 'px');
+    }
+    window.addEventListener('scroll', updateShadow, { passive: true });
+    updateShadow();
+  }
+
+  /* ── Signals sequential light-up ── */
+  const sigSection = document.getElementById('signals');
+  const sigItems = document.querySelectorAll('.sig-item');
+  let sigDone = false;
+  if (sigSection) {
+    const sigObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting && !sigDone) {
+          sigDone = true;
+          sigItems.forEach((item, i) => {
+            setTimeout(() => item.classList.add('lit'), 200 + i * 140);
+          });
+        }
+      });
+    }, { threshold: 0.25 });
+    sigObs.observe(sigSection);
+  }
+
+  /* ── Mobile CTA ── */
+  const mobCta = document.getElementById('mob-cta');
+  const mobCtaClose = document.getElementById('mob-cta-close');
+  let ctaClosed = false;
+  let ctaShown = false;
+  if (mobCta) {
+    const showAt = window.innerHeight * 1.6;
+    window.addEventListener('scroll', () => {
+      if (ctaClosed) return;
+      if (window.scrollY > showAt && !ctaShown) {
+        ctaShown = true;
+        mobCta.classList.add('show');
+      }
+      const inv = document.getElementById('inversion');
+      if (inv) {
+        const r = inv.getBoundingClientRect();
+        if (r.top < window.innerHeight) {
+          mobCta.classList.remove('show');
+        } else if (ctaShown && !ctaClosed) {
+          mobCta.classList.add('show');
+        }
+      }
+    }, { passive: true });
+    if (mobCtaClose) {
+      mobCtaClose.addEventListener('click', () => {
+        ctaClosed = true;
+        mobCta.classList.remove('show');
+        mobCta.classList.add('gone');
+      });
+    }
+  }
+
+  /* ── CTA click tracking ── */
+  [
+    ['hero-cta',    'click_match_hero_cta'],
+    ['hdr-cta',     'click_match_hero_cta'],
+    ['price-cta',   'click_match_price_cta'],
+    ['final-cta',   'click_match_final_cta'],
+    ['mob-cta-btn', 'click_match_mid_cta'],
+    ['mob-menu-cta','click_match_hero_cta'],
+  ].forEach(([id, event]) => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('click', () => {
+      track(event);
+      track('initiate_match_checkout');
+    });
+  });
+
+  /* ── Pricing view tracking ── */
+  const invEl = document.getElementById('inversion');
+  if (invEl) {
+    const priceObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          track('view_match_pricing');
+          priceObs.disconnect();
+        }
+      });
+    }, { threshold: 0.4 });
+    priceObs.observe(invEl);
+  }
+
+})();
+</script>
+</body>
+</html>
