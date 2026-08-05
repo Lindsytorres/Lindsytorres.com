@@ -1,0 +1,23 @@
+<!-- TODO: Replace with final exported Open Graph image (1200x630 PNG/JPG). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#160503" />
+      <stop offset="55%" stop-color="#290705" />
+      <stop offset="100%" stop-color="#160503" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D7AD61" stop-opacity="0" />
+      <stop offset="100%" stop-color="#D7AD61" stop-opacity="0.18" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect x="820" y="0" width="380" height="630" fill="url(#glow)" />
+  <circle cx="600" cy="210" r="54" fill="none" stroke="#B98232" stroke-width="1.6" />
+  <text x="600" y="228" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="46" fill="#E7C98E">PR</text>
+  <circle cx="600" cy="278" r="4" fill="none" stroke="#B98232" stroke-width="1.4" />
+  <text x="600" y="340" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="20" letter-spacing="6" fill="#D7AD61">INSIDE THE LEGACY METHOD</text>
+  <text x="600" y="400" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="56" fill="#F3E9D8">THE PRIVATE ROOM</text>
+  <text x="600" y="450" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="26" fill="#CDBDA6">Lindsy Torres</text>
+  <line x1="520" y1="480" x2="680" y2="480" stroke="#B98232" stroke-width="1" />
+</svg>

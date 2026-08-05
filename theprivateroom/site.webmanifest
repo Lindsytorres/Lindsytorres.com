@@ -1,0 +1,16 @@
+{
+  "name": "The Private Room",
+  "short_name": "The Private Room",
+  "description": "Mentoría privada 1:1 de Lindsy Torres, Inside The Legacy Method™.",
+  "start_url": "/theprivateroom/",
+  "display": "standalone",
+  "background_color": "#160503",
+  "theme_color": "#160503",
+  "icons": [
+    {
+      "src": "/theprivateroom/assets/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
