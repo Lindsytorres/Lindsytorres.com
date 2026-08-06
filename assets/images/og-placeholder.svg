@@ -1,0 +1,15 @@
+<!-- TODO: Replace with final exported Open Graph image (1200x630 PNG/JPG). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#12100E" />
+      <stop offset="55%" stop-color="#2A1913" />
+      <stop offset="100%" stop-color="#12100E" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <text x="600" y="300" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="54" fill="#FBF7EF">Lindsy Torres</text>
+  <text x="600" y="350" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="20" letter-spacing="6" fill="#B8975C">THE LEGACY METHOD</text>
+  <line x1="520" y1="390" x2="680" y2="390" stroke="#B8975C" stroke-width="1" />
+  <text x="600" y="440" text-anchor="middle" font-family="Manrope, sans-serif" font-size="18" fill="#E9D99D">Tu negocio debe representar el nivel al que llegaste.</text>
+</svg>
