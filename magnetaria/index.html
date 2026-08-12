@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magnetaria | Dirección Estratégica Digital</title>
+  <meta name="description" content="Dirección estratégica para profesionales y marcas personales que quieren convertir su comunicación, posicionamiento y ofertas en un sistema capaz de atraer mejores clientes.">
+  <link rel="canonical" href="https://lindsytorres.com/magnetaria/">
+  <meta property="og:title" content="Magnetaria | Dirección Estratégica Digital">
+  <meta property="og:description" content="Dirección estratégica para profesionales y marcas personales que quieren convertir su comunicación, posicionamiento y ofertas en un sistema capaz de atraer mejores clientes.">
+  <meta property="og:image" content="https://lindsytorres.com/magnetaria/public/assets/magnetaria-seal.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Magnetaria | Dirección Estratégica Digital">
+  <meta name="twitter:description" content="Dirección estratégica para profesionales y marcas personales que quieren convertir su comunicación, posicionamiento y ofertas en un sistema capaz de atraer mejores clientes.">
+  <meta name="twitter:image" content="https://lindsytorres.com/magnetaria/public/assets/magnetaria-seal.png">
+  <meta name="theme-color" content="#0E0B08">
+
+  <link rel="icon" type="image/png" href="public/assets/favicon.png">
+  <link rel="apple-touch-icon" href="public/assets/apple-touch-icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Analytics placeholders — reemplaza con tus IDs reales -->
+  <!-- Google Analytics 4
+  <script async src="https://www.googletagmanager.com/gtag/js?id=[GA_MEASUREMENT_ID]"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '[GA_MEASUREMENT_ID]');
+  </script>
+  -->
+  <!-- Meta Pixel
+  <script>
+    !function(f,b,e,v,n,t,s){...}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '[META_PIXEL_ID]');
+    fbq('track', 'PageView');
+  </script>
+  -->
+
+  <style>
+    /* ═══════════════════════════════════════════════════
+       DESIGN TOKENS — identidad Magnetaria (negro + oro/bronce)
+       ═══════════════════════════════════════════════════ */
+    :root {
+      --ink:      #0E0B08;
+      --ink-2:    #171009;
+      --ink-3:    #1D140B;
+      --ivory:    #F6F0E3;
+      --sand:     #EAE0C7;
+      --carbon:   #221708;
+
+      --gold:        #C9A15A;
+      --gold-dim:    #A8813F;
+      --gold-bright: #E8C687;
+
+      --k85: rgba(34,23,8,.85);
+      --k65: rgba(34,23,8,.65);
+      --k45: rgba(34,23,8,.45);
+      --k25: rgba(34,23,8,.25);
+      --k12: rgba(34,23,8,.12);
+
+      --w92: rgba(246,240,227,.92);
+      --w70: rgba(246,240,227,.70);
+      --w50: rgba(246,240,227,.50);
+      --w32: rgba(246,240,227,.32);
+      --w18: rgba(246,240,227,.18);
+      --w08: rgba(246,240,227,.08);
+
+      --g85: rgba(201,161,90,.85);
+      --g55: rgba(201,161,90,.55);
+      --g30: rgba(201,161,90,.30);
+      --g14: rgba(201,161,90,.14);
+
+      --font-d: 'Playfair Display','Georgia',serif;
+      --font-b: 'Inter','Helvetica Neue',sans-serif;
+
+      --ease-out: cubic-bezier(0.16,1,0.3,1);
+      --ease-io:  cubic-bezier(0.65,0,0.35,1);
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ivory);
+      color: var(--carbon);
+      font-family: var(--font-b);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+    section { position: relative; }
+
+    /* grano sutil reutilizable */
+    .grain { position: absolute; inset: 0; pointer-events: none; opacity: .05; mix-blend-mode: overlay; z-index: 5;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"); }
+
+    /* ── Reveal animations ── */
+    .rv { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease-out), transform .9s var(--ease-out); }
+    .rv.on { opacity: 1; transform: none; }
+    .rv-fade { opacity: 0; transition: opacity 1.2s var(--ease-out); }
+    .rv-fade.on { opacity: 1; }
+    .rv-up { opacity: 0; transform: translateY(18px); transition: opacity .8s var(--ease-out), transform .8s var(--ease-out); }
+    .rv-up.on { opacity: 1; transform: none; }
+    .d1{transition-delay:.10s}.d2{transition-delay:.20s}.d3{transition-delay:.30s}
+    .d4{transition-delay:.40s}.d5{transition-delay:.50s}.d6{transition-delay:.60s}
+
+    .lg { width:0; height:1px; background:var(--gold); transition: width 1.2s var(--ease-out); }
+    .lg.on { width:40px; }
+
+    /* ── Botones ── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 18px 36px;
+      font-family: var(--font-b); font-size: 9.5px; font-weight: 600;
+      letter-spacing: .28em; text-transform: uppercase;
+      white-space: nowrap;
+      transition: all .3s var(--ease-out);
+    }
+    .btn-gold { background: var(--gold); color: var(--ink); }
+    .btn-gold:hover { background: var(--gold-bright); }
+    .btn-dark { background: var(--carbon); color: var(--ivory); }
+    .btn-dark:hover { background: #33230F; }
+    .btn-ghost-light { background: transparent; color: var(--w70); border: .75px solid var(--w18); }
+    .btn-ghost-light:hover { background: var(--w08); border-color: var(--w32); color: var(--w92); }
+    .btn-ghost-dark { background: transparent; color: var(--k65); border: .75px solid var(--k25); }
+    .btn-ghost-dark:hover { background: var(--k12); border-color: var(--k45); }
+
+    /* ── Layout ── */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 64px; }
+    .wrap-sm { max-width: 800px; margin: 0 auto; padding: 0 64px; }
+    .wrap-md { max-width: 980px; margin: 0 auto; padding: 0 64px; }
+
+    .lbl { font-family: var(--font-b); font-size: 7.5px; font-weight: 500; letter-spacing: .52em; text-transform: uppercase; color: var(--gold); }
+    .lbl-d { color: rgba(201,161,90,.72); }
+    .divider { width:40px; height:1px; background:var(--gold); flex-shrink:0; }
+    .hr { width:100%; height:.5px; background:var(--k12); }
+    .hr-d { background: var(--w08); }
+
+    /* ══════════════════════════════════════════
+       HEADER
+    ══════════════════════════════════════════ */
+    #hdr {
+      position: fixed; top:0; left:0; right:0; z-index: 100;
+      padding: 26px 52px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background .5s ease, padding .4s ease, border-color .4s ease;
+      text-shadow: 0 1px 10px rgba(0,0,0,.5);
+    }
+    #hdr.scrolled { text-shadow: none; }
+    #hdr.scrolled {
+      background: rgba(14,11,8,.92);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      padding: 16px 52px;
+      border-bottom: .5px solid var(--w08);
+    }
+    .hdr-brand { display:flex; align-items:center; gap: 12px; }
+    .hdr-seal { width: 34px; height: 34px; flex-shrink: 0; }
+    .hdr-wordmark { font-family: var(--font-b); font-size: 11px; font-weight: 600; letter-spacing: .48em; text-transform: uppercase; color: var(--w92); }
+    .hdr-nav { display: flex; align-items: center; gap: 36px; }
+    .hdr-nav a { position: relative; font-family: var(--font-b); font-size: 9.5px; font-weight: 400; letter-spacing: .30em; text-transform: uppercase; color: var(--w50); transition: color .3s ease; padding-bottom: 3px; }
+    .hdr-nav a::after { content:''; position:absolute; left:0; right:100%; bottom:0; height:1px; background:var(--gold); transition: right .35s var(--ease-out); }
+    .hdr-nav a:hover { color: var(--w92); }
+    .hdr-nav a:hover::after { right: 0; }
+    .hdr-cta { font-family: var(--font-b); font-size: 8.5px; font-weight: 600; letter-spacing: .40em; text-transform: uppercase; padding: 11px 22px; color: var(--gold-bright); border: .75px solid var(--g55); background: rgba(14,11,8,.35); transition: all .3s ease; }
+    #hdr.scrolled .hdr-cta { background: transparent; color: var(--gold); }
+    .hdr-cta:hover { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+
+    #menu-btn { display: none; flex-direction: column; gap: 5px; }
+    #menu-btn span { display:block; width:22px; height:1px; background: var(--w70); }
+    #mob-menu { display:none; position: fixed; inset:0; background: var(--ink); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 34px; }
+    #mob-menu.open { display: flex; }
+    #mob-menu a { font-family: var(--font-d); font-size: 32px; font-style: italic; font-weight: 700; color: var(--w92); }
+    #mob-menu a.btn { font-family: var(--font-b); font-size: 8.5px; font-weight: 600; font-style: normal; letter-spacing: .16em; color: var(--ink); }
+    #mob-close { position: absolute; top: 24px; right: 24px; font-size: 20px; color: var(--w50); padding: 8px; }
+    #mob-menu .btn { margin-top: 14px; }
+
+    /* ══════════════════════════════════════════
+       HERO
+    ══════════════════════════════════════════ */
+    #hero { min-height: 100dvh; background: var(--ink); display: grid; grid-template-columns: 1.05fr .95fr; overflow: hidden; }
+    .hero-glow { position: absolute; inset:0; background: radial-gradient(ellipse 60% 60% at 20% 30%, rgba(201,161,90,.08), transparent 65%); pointer-events:none; z-index:1; }
+    .hero-left { padding: 152px 68px 90px 72px; display:flex; flex-direction:column; justify-content:center; position:relative; z-index:2; min-width: 0; }
+    .hero-eye { font-family: var(--font-b); font-size: 9px; font-weight: 700; letter-spacing: .58em; text-transform: uppercase; color: var(--g85); margin-bottom: 30px; }
+    .hero-title { font-family: var(--font-d); font-size: clamp(34px,4.1vw,58px); font-style: italic; font-weight: 700; line-height: 1.08; letter-spacing: -.5px; color: var(--w92); max-width: 15ch; margin-bottom: 34px; }
+    .hero-lines { display:flex; flex-direction:column; gap: 6px; margin-bottom: 8px; }
+    .hero-line { font-family: var(--font-b); font-size: 16px; font-weight: 400; line-height: 1.6; color: var(--w50); }
+    .hero-line.turn { color: var(--w70); margin-top: 8px; }
+    .hero-line.final { font-family: var(--font-d); font-style: italic; font-weight: 700; font-size: 21px; color: var(--gold-bright); margin-top: 14px; }
+    .hero-cta-wrap { display:flex; flex-direction:column; align-items:flex-start; gap: 14px; margin-top: 38px; }
+    .hero-tag { font-family: var(--font-b); font-size: 9.5px; font-weight: 500; letter-spacing: .28em; text-transform: uppercase; color: var(--w32); }
+    .hero-right { position: relative; height: 100%; min-height: 100dvh; overflow: hidden; }
+    .hero-right img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position: 50% 15%; filter: saturate(.9) contrast(1.03) brightness(.94); }
+    .hero-right::before { content:''; position:absolute; inset:0; z-index:2; background: linear-gradient(90deg, rgba(14,11,8,.92) 0%, rgba(14,11,8,.10) 22%, transparent 46%); }
+    .hero-right::after { content:''; position:absolute; inset:0; z-index:2; background: linear-gradient(to top, rgba(14,11,8,.55) 0%, transparent 32%); }
+    .hero-tick { position:absolute; z-index:3; width:44px; height:44px; opacity:.55; }
+    .hero-tick.tl { top:32px; right:32px; transform: scaleX(-1); }
+
+    /* ══════════════════════════════════════════
+       PROBLEMA — RECONOCIMIENTO
+    ══════════════════════════════════════════ */
+    #problema { background: var(--ivory); padding: 100px 0 80px; }
+    .prob-hd { margin-bottom: 44px; }
+    .prob-h2 { font-family: var(--font-d); font-size: clamp(26px,3.4vw,42px); font-style: italic; font-weight: 700; line-height: 1.22; color: var(--k85); }
+    .prob-h2-big { font-family: var(--font-d); font-size: clamp(32px,4.6vw,56px); font-style: italic; font-weight: 800; line-height: 1.14; color: var(--carbon); margin-top: 4px; }
+    .prob-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--k12); border: 1px solid var(--k12); }
+    .prob-card { background: var(--ivory); padding: 32px 30px; display:flex; flex-direction:column; gap: 14px; }
+    .prob-n { font-family: var(--font-d); font-size: 13px; font-style: italic; font-weight: 700; color: var(--gold-dim); letter-spacing: .06em; }
+    .prob-lead { font-family: var(--font-b); font-size: 16.5px; font-weight: 600; color: var(--carbon); line-height: 1.4; }
+    .prob-sub { font-family: var(--font-b); font-size: 14px; font-weight: 400; line-height: 1.72; color: var(--k65); }
+
+    #problema-cierre { background: var(--ink); padding: 120px 0; display:flex; align-items:center; }
+    .pc-l1 { font-family: var(--font-d); font-size: clamp(28px,4.6vw,54px); font-style: italic; font-weight: 700; line-height: 1.14; color: var(--w50); }
+    .pc-l2 { font-family: var(--font-d); font-size: clamp(28px,4.6vw,54px); font-style: italic; font-weight: 800; line-height: 1.14; color: var(--gold-bright); margin-top: 10px; }
+
+    /* ══════════════════════════════════════════
+       QUÉ HACE MAGNETARIA
+    ══════════════════════════════════════════ */
+    #que-hacemos { background: var(--sand); padding: 108px 0; }
+    .qh-h2 { font-family: var(--font-d); font-size: clamp(28px,3.8vw,46px); font-style: italic; font-weight: 700; line-height: 1.2; color: var(--carbon); max-width: 18ch; margin: 18px 0 30px; }
+    .qh-body { font-family: var(--font-b); font-size: 16px; font-weight: 400; line-height: 1.85; color: var(--k65); max-width: 58ch; margin-bottom: 4px; }
+    .qh-pivot { font-family: var(--font-d); font-style: italic; font-weight: 700; color: var(--carbon); font-size: 19px; margin: 8px 0; }
+    .qh-qlist { display:flex; flex-direction:column; margin: 30px 0 34px; max-width: 66ch; }
+    .qh-q { display:flex; gap: 18px; padding: 17px 0; border-bottom: .5px solid var(--k12); align-items: baseline; }
+    .qh-q:first-child { border-top: .5px solid var(--k12); }
+    .qh-q-mark { font-family: var(--font-d); font-style: italic; font-size: 15px; color: var(--gold-dim); flex-shrink: 0; }
+    .qh-q-txt { font-family: var(--font-d); font-style: italic; font-weight: 700; font-size: clamp(15px,1.6vw,19px); line-height: 1.4; color: var(--carbon); }
+    .qh-close { padding: 26px 32px; border-left: 1.5px solid var(--gold); background: rgba(201,161,90,.09); font-family: var(--font-d); font-style: italic; font-weight: 700; font-size: 20px; color: var(--carbon); max-width: 44ch; }
+
+    /* ══════════════════════════════════════════
+       EL SISTEMA
+    ══════════════════════════════════════════ */
+    #sistema { background: var(--ink); padding: 116px 0 106px; overflow: hidden; }
+    .sis-hd { text-align:center; margin-bottom: 20px; }
+    .orbit-wrap { position: relative; width: min(92vw, 560px); aspect-ratio: 1/1; margin: 50px auto 64px; }
+    .orbit-ring { position:absolute; inset: 12%; border: .5px solid var(--w08); border-radius: 50%; }
+    .orbit-ring.r2 { inset: 0; border-color: var(--w08); }
+    .orbit-center { position:absolute; top:50%; left:50%; transform: translate(-50%,-50%); text-align:center; z-index: 3; display:flex; flex-direction:column; align-items:center; }
+    .orbit-center-seal { width: min(20%, 92px); height: auto; }
+    .orbit-center-sub { font-family: var(--font-b); font-size: 7.5px; letter-spacing: .4em; text-transform: uppercase; color: var(--w32); margin-top: 14px; }
+    .orbit-item { position: absolute; top:50%; left:50%; display:flex; flex-direction:column; align-items:center; gap:8px; text-align:center; width: 148px; margin-left: -74px; margin-top: -20px; z-index: 2; }
+    .orbit-dot { width:5px; height:5px; border-radius:50%; background: var(--gold); }
+    .orbit-label { font-family: var(--font-b); font-size: 9px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--w70); line-height: 1.4; }
+
+    .sys-chain { max-width: 620px; margin: 0 auto; display:flex; flex-direction:column; }
+    .sys-h3 { font-family: var(--font-d); font-size: clamp(22px,3vw,32px); font-style: italic; font-weight: 700; color: var(--w92); text-align:center; margin-bottom: 44px; }
+    .sys-row { display:flex; align-items:center; gap: 22px; padding: 15px 0; }
+    .sys-row-line { width:1px; align-self:stretch; background: var(--g30); margin: 0 auto; }
+    .sys-txt { font-family: var(--font-b); font-size: 15px; font-weight: 400; line-height: 1.6; color: var(--w50); text-align:center; }
+    .sys-final { font-family: var(--font-d); font-style: italic; font-weight: 800; font-size: 21px; color: var(--gold-bright); text-align:center; margin-top: 26px; }
+
+    /* ══════════════════════════════════════════
+       ANTES / DESPUÉS
+    ══════════════════════════════════════════ */
+    #comparativa { background: var(--ivory); padding: 108px 0; }
+    .cmp-title { font-family: var(--font-d); font-size: clamp(26px,3.6vw,44px); font-style: italic; font-weight: 700; line-height: 1.24; color: var(--carbon); max-width: 18ch; margin-bottom: 56px; }
+    .cmp-hd { display:grid; grid-template-columns: 1fr 1fr; margin-bottom: 8px; padding-bottom: 18px; border-bottom: 1px solid var(--k25); }
+    .cmp-hd-l { font-family: var(--font-b); font-size: 9.5px; font-weight: 600; letter-spacing: .38em; text-transform: uppercase; color: var(--k45); }
+    .cmp-hd-r { font-family: var(--font-b); font-size: 9.5px; font-weight: 600; letter-spacing: .38em; text-transform: uppercase; color: var(--gold-dim); text-align: right; }
+    .cmp-row { display:grid; grid-template-columns: 1fr 40px 1fr; align-items:center; padding: 26px 0; border-bottom: .5px solid var(--k12); gap: 10px; }
+    .cmp-before { font-family: var(--font-b); font-size: 16px; font-weight: 400; color: var(--k45); }
+    .cmp-arrow { font-family: var(--font-d); font-style: italic; color: var(--gold); font-size: 18px; text-align:center; }
+    .cmp-after { font-family: var(--font-d); font-style: italic; font-weight: 700; font-size: clamp(17px,1.9vw,21px); line-height: 1.32; color: var(--carbon); text-align: right; }
+    .cmp-close { margin-top: 56px; text-align:center; }
+    .cmp-close p { font-family: var(--font-d); font-size: clamp(24px,3.4vw,40px); font-style: italic; font-weight: 700; line-height: 1.24; color: var(--carbon); }
+    .cmp-close p.dim { color: var(--k45); margin-bottom: 6px; }
+
+    /* ══════════════════════════════════════════
+       CASOS — base compartida
+    ══════════════════════════════════════════ */
+    .caso-eye { display:flex; align-items:center; gap:14px; margin-bottom: 26px; }
+    .caso-h2 { font-family: var(--font-d); font-size: clamp(26px,3.6vw,44px); font-style: italic; font-weight: 700; line-height: 1.24; max-width: 20ch; }
+    .caso-body { font-family: var(--font-b); font-size: 15.5px; font-weight: 400; line-height: 1.86; max-width: 56ch; }
+    .caso-big { font-family: var(--font-d); font-size: clamp(46px,8vw,110px); font-style: italic; font-weight: 800; line-height: .96; letter-spacing: -1px; margin: 6px 0; }
+    .caso-hl { padding: 26px 30px; border-left: 1.5px solid var(--gold); font-family: var(--font-d); font-style: italic; font-weight: 700; font-size: clamp(18px,2vw,24px); line-height: 1.4; max-width: 46ch; }
+
+    /* CASO 1 — VALENTINA (sand, expediente editorial) */
+    #caso-valentina { background: var(--sand); padding: 116px 0; }
+    .cv-frame { border: 1px solid var(--k25); padding: 64px 60px; background: rgba(246,240,227,.4); }
+    .cv-body { color: var(--k65); display:flex; flex-direction:column; gap: 10px; margin: 26px 0 30px; }
+    .cv-big { color: var(--carbon); }
+    .cv-hl { background: rgba(201,161,90,.12); color: var(--carbon); margin: 30px 0; }
+    .cv-tail { color: var(--k65); display:flex; flex-direction:column; gap: 8px; margin-top: 26px; }
+    .cv-bold { color: var(--carbon); font-weight: 600; }
+
+    /* CASO 2 — SANDRA (ink, ofertas) */
+    #caso-sandra { background: var(--ink); padding: 116px 0; }
+    .cs-phrases { display:flex; flex-wrap:wrap; gap: 16px 22px; margin: 44px 0 54px; }
+    .cs-phrase { position: relative; font-family: var(--font-d); font-style: italic; font-weight: 600; font-size: clamp(16px,1.9vw,21px); color: var(--w32); padding: 10px 2px; }
+    .cs-phrase .strike { position:absolute; left:0; top:50%; width:0; height:1px; background: var(--g85); transition: width .8s var(--ease-out); }
+    .cs-phrase.on .strike { width: 100%; }
+    .cs-body { color: var(--w50); display:flex; flex-direction:column; gap: 10px; max-width: 56ch; }
+    .cs-body b { color: var(--w92); font-weight: 600; }
+    .cs-hl { color: var(--w92); border-color: var(--gold); background: rgba(201,161,90,.08); margin: 34px 0 22px; }
+    .cs-final { font-family: var(--font-b); font-size: 14px; color: var(--w32); }
+
+    /* ══════════════════════════════════════════
+       QUÉ PUEDE CAMBIAR
+    ══════════════════════════════════════════ */
+    #que-cambia { background: var(--ivory); padding: 108px 0; }
+    .qc-h2 { font-family: var(--font-d); font-size: clamp(26px,3.6vw,44px); font-style: italic; font-weight: 700; line-height: 1.24; max-width: 20ch; color: var(--carbon); margin-bottom: 60px; }
+    .qc-grid { display:grid; grid-template-columns: repeat(3,1fr); border-top: .5px solid var(--k12); border-left: .5px solid var(--k12); }
+    .qc-item { padding: 40px 36px; border-right: .5px solid var(--k12); border-bottom: .5px solid var(--k12); display:flex; flex-direction:column; gap: 14px; }
+    .qc-n { font-family: var(--font-d); font-style: italic; font-weight: 800; font-size: 44px; color: rgba(201,161,90,.55); line-height: 1; }
+    .qc-txt { font-family: var(--font-b); font-size: 14.5px; font-weight: 500; line-height: 1.62; color: var(--k85); }
+    .qc-close { margin-top: 64px; display:flex; flex-direction:column; gap: 8px; max-width: 54ch; }
+    .qc-close p { font-family: var(--font-b); font-size: 15px; color: var(--k45); }
+    .qc-close p.strong { font-family: var(--font-d); font-style: italic; font-weight: 700; font-size: clamp(19px,2.2vw,25px); color: var(--carbon); margin-top: 6px; line-height: 1.4; }
+
+    /* ══════════════════════════════════════════
+       CÓMO FUNCIONA — TIMELINE
+    ══════════════════════════════════════════ */
+    #como-funciona { background: var(--ink); padding: 116px 0; }
+    .cf-h2 { font-family: var(--font-d); font-size: clamp(26px,3.6vw,42px); font-style: italic; font-weight: 700; line-height: 1.28; max-width: 22ch; color: var(--w92); }
+    .cf-sub { font-family: var(--font-d); font-style: italic; font-weight: 700; font-size: clamp(18px,2vw,23px); color: var(--gold-bright); margin-top: 14px; }
+    .timeline { position: relative; margin-top: 70px; padding-left: 1px; }
+    .timeline-spine { position:absolute; left:0; top:0; bottom:0; width:1px; background: var(--w08); }
+    .timeline-fill { position:absolute; left:0; top:0; width:1px; background: var(--gold); height:0; transition: height 2.2s var(--ease-out); }
+    .timeline-fill.on { height: 100%; }
+    .paso { display:grid; grid-template-columns: 190px 1fr; gap: 56px; padding: 40px 0 40px 36px; position:relative; }
+    .paso::before { content:''; position:absolute; left:-4px; top:60px; width:8px; height:8px; border-radius:50%; background: var(--ink); border: 1.5px solid var(--gold); }
+    .paso-num-lbl { font-family: var(--font-b); font-size: 8px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+    .paso-num-big { font-family: var(--font-d); font-size: 36px; font-style: italic; font-weight: 700; color: var(--w92); line-height: 1; margin-top: 6px; }
+    .paso-title { font-family: var(--font-d); font-size: clamp(19px,2.2vw,25px); font-style: italic; font-weight: 700; color: var(--w92); margin-bottom: 8px; }
+    .paso-p { font-family: var(--font-b); font-size: 14.5px; font-weight: 400; line-height: 1.8; color: var(--w50); max-width: 60ch; }
+    .paso-list { display:flex; flex-direction:column; margin: 12px 0 0; }
+    .paso-list-item { display:flex; gap:14px; padding: 8px 0; border-bottom: .5px solid var(--w08); align-items:baseline; }
+    .paso-list-item:first-child { border-top: .5px solid var(--w08); }
+    .paso-dash { font-family: var(--font-b); font-size: 10px; color: var(--g55); flex-shrink:0; }
+    .paso-list-txt { font-family: var(--font-b); font-size: 13.5px; color: var(--w50); line-height: 1.6; }
+    .paso-chips { display:flex; flex-wrap:wrap; gap: 10px; margin-top: 14px; }
+    .paso-chip { font-family: var(--font-b); font-size: 11.5px; font-weight: 500; letter-spacing: .04em; color: var(--w70); border: .75px solid var(--w18); padding: 8px 16px; }
+
+    /* ══════════════════════════════════════════
+       PARA QUIÉN ES
+    ══════════════════════════════════════════ */
+    #para-quien { background: var(--sand); padding: 116px 0; text-align:center; }
+    .pq-h2 { font-family: var(--font-d); font-size: clamp(24px,3.2vw,38px); font-style: italic; font-weight: 700; line-height: 1.3; max-width: 26ch; margin: 0 auto 60px; color: var(--carbon); }
+    .pq-lines { display:flex; flex-direction:column; gap: 26px; max-width: 640px; margin: 0 auto; }
+    .pq-line { font-family: var(--font-d); font-size: clamp(19px,2.6vw,29px); font-style: italic; font-weight: 700; line-height: 1.32; color: rgba(34,23,8,.24); transition: color .7s var(--ease-out); }
+    .pq-line.lit { color: var(--carbon); }
+    .pq-close { margin-top: 64px; font-family: var(--font-d); font-size: clamp(22px,2.8vw,32px); font-style: italic; font-weight: 800; color: var(--carbon); }
+
+    /* ══════════════════════════════════════════
+       INVERSIÓN
+    ══════════════════════════════════════════ */
+    #inversion { background: var(--ink); padding: 116px 0; }
+    .inv-grid { display:grid; grid-template-columns: 1fr 400px; gap: 80px; align-items:start; }
+    .inv-left { display:flex; flex-direction:column; gap: 16px; }
+    .inv-h2 { font-family: var(--font-d); font-size: clamp(28px,3.6vw,44px); font-style: italic; font-weight: 700; line-height: 1.18; color: var(--w92); max-width: 16ch; margin: 18px 0 26px; }
+    .inv-p { font-family: var(--font-b); font-size: 15px; font-weight: 400; line-height: 1.82; color: var(--w50); max-width: 54ch; }
+    .inv-p b { color: var(--w92); font-weight: 600; }
+    .inv-card { border: .75px solid var(--w18); background: var(--w08); display:flex; flex-direction:column; }
+    .inv-card-hd { padding: 30px 32px 24px; border-bottom: .5px solid var(--w08); }
+    .inv-card-lbl { font-family: var(--font-b); font-size: 8px; font-weight: 600; letter-spacing: .48em; text-transform:uppercase; color: var(--g85); margin-bottom: 12px; }
+    .inv-amount-row { display:flex; align-items:baseline; gap: 8px; }
+    .inv-curr { font-family: var(--font-b); font-size: 13px; color: var(--w32); }
+    .inv-amount { font-family: var(--font-d); font-size: 46px; font-style: italic; font-weight: 800; color: var(--w92); line-height: 1; }
+    .inv-per { font-family: var(--font-b); font-size: 11px; color: var(--w32); margin-top: 6px; }
+    .inv-includes { padding: 22px 32px; display:flex; flex-direction:column; }
+    .inv-inc-lbl { font-family: var(--font-b); font-size: 7.5px; font-weight: 600; letter-spacing: .3em; text-transform:uppercase; color: var(--w32); margin-bottom: 12px; }
+    .inv-inc-item { display:flex; gap: 12px; padding: 9px 0; align-items:baseline; }
+    .inv-inc-dot { width:3px; height:3px; border-radius:50%; background: var(--g55); flex-shrink:0; }
+    .inv-inc-txt { font-family: var(--font-b); font-size: 12.5px; font-weight: 400; line-height: 1.55; color: var(--w50); }
+    .inv-cta-group { padding: 24px 32px 30px; display:flex; flex-direction:column; gap: 12px; border-top: .5px solid var(--w08); }
+    .inv-cta-group .btn { font-size: 8.5px; letter-spacing: .24em; padding: 17px 20px; white-space: nowrap; }
+    .inv-secure { font-family: var(--font-b); font-size: 8.5px; letter-spacing: .24em; text-transform:uppercase; color: var(--w18); text-align:center; }
+
+    /* ══════════════════════════════════════════
+       CIERRE
+    ══════════════════════════════════════════ */
+    #cierre { background: var(--ink); padding: 130px 0; overflow:hidden; }
+    .cierre-inner { display:flex; flex-direction:column; align-items:center; text-align:center; gap: 26px; }
+    .cierre-pause { font-family: var(--font-d); font-size: clamp(22px,3.4vw,38px); font-style: italic; font-weight: 700; color: var(--w32); line-height: 1.3; }
+    .cierre-pause.lift { color: var(--w70); }
+    .cierre-facts { display:flex; flex-direction:column; gap: 6px; margin-top: 12px; }
+    .cierre-facts p { font-family: var(--font-b); font-size: 15px; color: var(--w50); }
+    .cierre-facts p.last { color: var(--w70); margin-top: 6px; max-width: 46ch; }
+    .cierre-final { font-family: var(--font-d); font-size: clamp(32px,5.2vw,64px); font-style: italic; font-weight: 800; line-height: 1.08; color: var(--gold-bright); max-width: 18ch; margin-top: 18px; }
+    .cierre-cta { margin-top: 28px; }
+
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
+    footer { background: #0A0805; padding: 60px 0 40px; }
+    .footer-top { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom: 40px; padding-bottom: 40px; border-bottom: .5px solid var(--w08); gap: 24px; flex-wrap: wrap; }
+    .footer-brand { display:flex; align-items:center; gap: 14px; }
+    .footer-seal { width: 40px; height: 40px; opacity: .85; }
+    .footer-brand-txt { display:flex; flex-direction:column; gap: 4px; }
+    .footer-name { font-family: var(--font-b); font-size: 11px; font-weight: 600; letter-spacing: .40em; text-transform:uppercase; color: var(--w70); }
+    .footer-tag { font-family: var(--font-b); font-size: 10px; font-weight: 400; letter-spacing: .1em; color: var(--w32); }
+    .footer-links { display:flex; gap: 28px; flex-wrap:wrap; }
+    .footer-links a { font-family: var(--font-b); font-size: 9px; font-weight: 400; letter-spacing: .32em; text-transform: uppercase; color: var(--w32); transition: color .3s ease; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom { display:flex; align-items:flex-start; justify-content:space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-legal { font-family: var(--font-b); font-size: 10px; line-height: 1.7; color: var(--w18); max-width: 520px; }
+    .footer-copy { font-family: var(--font-b); font-size: 9px; color: var(--w18); white-space: nowrap; }
+
+    /* ══════════════════════════════════════════
+       CTA STICKY MÓVIL
+    ══════════════════════════════════════════ */
+    #mob-cta {
+      display:none; position: fixed; bottom:0; left:0; right:0; z-index: 90;
+      background: rgba(14,11,8,.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      padding: 12px 20px; border-top: .5px solid var(--w08);
+      align-items:center; justify-content:space-between; gap: 14px;
+      transform: translateY(100%); transition: transform .5s var(--ease-out);
+    }
+    #mob-cta.show { transform: translateY(0); }
+    #mob-cta.gone { transform: translateY(100%); }
+    .mob-cta-txt { font-family: var(--font-b); font-size: 8.5px; font-weight: 500; letter-spacing: .3em; text-transform:uppercase; color: var(--w50); }
+    #mob-cta-close { position:absolute; top:-34px; right:14px; background: rgba(14,11,8,.8); color: var(--w32); font-size: 12px; padding: 6px 9px; border: .5px solid var(--w08); }
+    .mob-cta-btn { font-family: var(--font-b); font-size: 8.5px; font-weight: 700; letter-spacing: .34em; text-transform:uppercase; padding: 11px 18px; background: var(--gold); color: var(--ink); white-space: nowrap; }
+
+    /* ══════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .wrap, .wrap-sm, .wrap-md { padding: 0 40px; }
+      .prob-grid { grid-template-columns: repeat(2,1fr); }
+      .qc-grid { grid-template-columns: repeat(2,1fr); }
+      .inv-grid { grid-template-columns: 1fr; }
+      .orbit-item { width: 120px; margin-left: -60px; }
+    }
+    @media (max-width: 768px) {
+      #hero { grid-template-columns: 1fr; }
+      .hero-right { order: -1; min-height: 46vh; }
+      .hero-right::before { background: linear-gradient(180deg, rgba(14,11,8,.30) 0%, rgba(14,11,8,.92) 96%); }
+      .hero-left { padding: 44px 24px 64px; }
+      .hero-title { max-width: none; }
+      #hdr { padding: 18px 20px; }
+      #hdr.scrolled { padding: 14px 20px; }
+      .hdr-nav { display:none; }
+      .hdr-cta { display:none; }
+      #menu-btn { display:flex; }
+      .wrap, .wrap-sm, .wrap-md { padding: 0 22px; }
+      .prob-grid { grid-template-columns: 1fr; }
+      .qc-grid { grid-template-columns: 1fr; }
+      .qc-item { border-right: none; }
+      .cmp-row { grid-template-columns: 1fr; text-align:left; gap: 6px; padding: 20px 0; }
+      .cmp-after { text-align:left; }
+      .cmp-arrow { display:none; }
+      .cmp-hd { grid-template-columns: 1fr; gap: 6px; }
+      .cmp-hd-r { text-align:left; }
+      .cv-frame { padding: 40px 26px; }
+      .paso { grid-template-columns: 1fr; gap: 14px; padding-left: 20px; }
+      .orbit-wrap { display:none; }
+      .sys-chain { margin-top: 10px; }
+      .footer-top, .footer-bottom { flex-direction:column; }
+      #mob-cta { display:flex; }
+      .inv-card { margin-top: 20px; }
+      .btn { font-size: 8.5px; letter-spacing: .16em; padding: 16px 22px; }
+      .cierre-cta .btn { padding: 18px 26px !important; font-size: 9px !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .rv, .rv-fade, .rv-up, .lg, .timeline-fill, .cs-phrase .strike, .pq-line { opacity:1; transform:none; transition:none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ════════════════════════════════════ -->
+<nav id="hdr" role="navigation" aria-label="Navegación principal">
+  <a href="#hero" class="hdr-brand" aria-label="Magnetaria — inicio">
+    <img class="hdr-seal" src="public/assets/magnetaria-seal.png" alt="" loading="eager">
+    <span class="hdr-wordmark">MAGNETARIA</span>
+  </a>
+  <div class="hdr-nav" role="menubar">
+    <a href="#que-hacemos" role="menuitem">Qué hacemos</a>
+    <a href="#caso-valentina" role="menuitem">Casos</a>
+    <a href="#como-funciona" role="menuitem">Cómo funciona</a>
+    <a href="#inversion" role="menuitem">Inversión</a>
+  </div>
+  <a href="https://wa.link/3s0ccp" target="_blank" rel="noopener" class="hdr-cta btn" id="hdr-cta">QUIERO ELEVAR MI NEGOCIO</a>
+  <button id="menu-btn" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ══ MENÚ MÓVIL ════════════════════════════════ -->
+<div id="mob-menu" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+  <button id="mob-close" aria-label="Cerrar menú">✕</button>
+  <a href="#que-hacemos">Qué hacemos</a>
+  <a href="#caso-valentina">Casos</a>
+  <a href="#como-funciona">Cómo funciona</a>
+  <a href="#inversion">Inversión</a>
+  <a href="https://wa.link/3s0ccp" target="_blank" rel="noopener" class="btn btn-gold" id="mob-menu-cta">QUIERO ELEVAR MI NEGOCIO</a>
+</div>
+
+<main>
+
+<!-- ══ HERO ══════════════════════════════════════ -->
+<section id="hero" aria-labelledby="hero-heading">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-left">
+    <p class="hero-eye rv">Dirección Estratégica Digital</p>
+    <h1 id="hero-heading" class="hero-title rv d1">Tu negocio puede estar creciendo y seguir viéndose más pequeño de lo que realmente es.</h1>
+    <div class="hero-lines rv d2">
+      <p class="hero-line">Puedes tener experiencia.</p>
+      <p class="hero-line">Puedes ser extraordinaria haciendo tu trabajo.</p>
+      <p class="hero-line">Puedes tener clientes.</p>
+      <p class="hero-line">Incluso puedes estar vendiendo bien.</p>
+      <p class="hero-line turn">Y aun así tener una marca que no consigue explicar por qué eres tan buena como eres.</p>
+      <p class="hero-line final">Eso es lo que venimos a cambiar.</p>
+    </div>
+    <div class="hero-cta-wrap rv d3">
+      <a href="https://wa.link/3s0ccp" target="_blank" rel="noopener" class="btn btn-gold" id="hero-cta">QUIERO ELEVAR MI NEGOCIO</a>
+      <p class="hero-tag">Barranquilla + modalidad virtual</p>
+    </div>
+  </div>
+  <div class="hero-right" aria-hidden="true">
+    <img src="public/assets/hero-lindsy.jpg" alt="" loading="eager">
+    <div class="hero-tick tl"><svg viewBox="0 0 44 44"><path d="M2 44 V2 H44" fill="none" stroke="rgba(201,161,90,.6)" stroke-width="1.3"/></svg></div>
+    <div class="grain"></div>
+  </div>
+</section>
+
+<!-- ══ RECONOCIMIENTO DEL PROBLEMA ═══════════════ -->
+<section id="problema" aria-labelledby="problema-heading">
+  <div class="wrap">
+    <div class="prob-hd">
+      <h2 id="problema-heading" class="prob-h2 rv">Puede que no tengas un problema de contenido.</h2>
+      <p class="prob-h2-big rv d1">Puede que tengas un problema de dirección.</p>
+    </div>
+    <div class="prob-grid">
+      <div class="prob-card rv d1">
+        <span class="prob-n">01</span>
+        <p class="prob-lead">Tienes varios servicios.</p>
+        <p class="prob-sub">Pero cuando alguien pregunta qué haces, necesitas cinco minutos para explicarlo.</p>
+      </div>
+      <div class="prob-card rv d2">
+        <span class="prob-n">02</span>
+        <p class="prob-lead">Publicas todas las semanas.</p>
+        <p class="prob-sub">Pero si dejamos de publicar durante un mes, probablemente nadie sabría qué idea representa tu marca.</p>
+      </div>
+      <div class="prob-card rv d3">
+        <span class="prob-n">03</span>
+        <p class="prob-lead">Sabes muchísimo.</p>
+        <p class="prob-sub">Pero tu contenido todavía se parece al de otras profesionales de tu sector.</p>
+      </div>
+      <div class="prob-card rv d4">
+        <span class="prob-n">04</span>
+        <p class="prob-lead">Tienes clientes.</p>
+        <p class="prob-sub">Pero sabes que todavía no estás atrayendo al tipo de cliente que podría contratarte por más tiempo y pagarte mejor.</p>
+      </div>
+      <div class="prob-card rv d5">
+        <span class="prob-n">05</span>
+        <p class="prob-lead">Tu negocio evolucionó.</p>
+        <p class="prob-sub">Tu comunicación no necesariamente evolucionó con él.</p>
+      </div>
+      <div class="prob-card rv d6">
+        <span class="prob-n">06</span>
+        <p class="prob-lead">Tus servicios funcionan.</p>
+        <p class="prob-sub">Pero todavía no están empaquetados como ofertas que sean fáciles de entender, desear y comprar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="problema-cierre" aria-hidden="true">
+  <div class="wrap-md">
+    <p class="pc-l1 rv">El problema no siempre es lo que vendes.</p>
+    <p class="pc-l2 rv d2">A veces es lo difícil que resulta entender por qué deberían comprártelo a ti.</p>
+  </div>
+</section>
+
+<!-- ══ QUÉ HACE MAGNETARIA ═══════════════════════ -->
+<section id="que-hacemos" aria-labelledby="qh-heading">
+  <div class="wrap-md">
+    <p class="lbl rv">Entonces, ¿qué hacemos?</p>
+    <h2 id="qh-heading" class="qh-h2 rv d1">Entramos al negocio y ponemos dirección detrás de lo que el mercado ve.</h2>
+
+    <p class="qh-body rv">Magnetaria no es un servicio de community management.</p>
+    <p class="qh-body rv">Tampoco somos una fábrica de contenido.</p>
+    <p class="qh-pivot rv">Somos Dirección Estratégica Digital.</p>
+    <p class="qh-body rv">Eso significa que antes de preguntarnos:</p>
+    <p class="qh-pivot rv">"¿Qué publicamos esta semana?"</p>
+    <p class="qh-body rv">nos hacemos preguntas mucho más importantes:</p>
+
+    <div class="qh-qlist">
+      <div class="qh-q rv"><span class="qh-q-mark">—</span><p class="qh-q-txt">¿Qué queremos que las personas entiendan de este negocio?</p></div>
+      <div class="qh-q rv"><span class="qh-q-mark">—</span><p class="qh-q-txt">¿Por qué deberían elegirlo?</p></div>
+      <div class="qh-q rv"><span class="qh-q-mark">—</span><p class="qh-q-txt">¿Qué debería vender?</p></div>
+      <div class="qh-q rv"><span class="qh-q-mark">—</span><p class="qh-q-txt">¿Cómo deberían estar organizadas sus ofertas?</p></div>
+      <div class="qh-q rv"><span class="qh-q-mark">—</span><p class="qh-q-txt">¿Qué palabras queremos que el mercado empiece a relacionar con esta marca?</p></div>
+      <div class="qh-q rv"><span class="qh-q-mark">—</span><p class="qh-q-txt">¿Qué tendría que cambiar para atraer clientes de mayor valor?</p></div>
+    </div>
+
+    <p class="qh-close rv">Solo entonces construimos la comunicación.</p>
+  </div>
+</section>
+
+<!-- ══ EL SISTEMA ═════════════════════════════════ -->
+<section id="sistema" aria-labelledby="sistema-heading">
+  <div class="wrap">
+    <div class="sis-hd">
+      <p class="lbl rv" style="text-align:center;">El sistema</p>
+    </div>
+
+    <div class="orbit-wrap" id="orbit" aria-hidden="true">
+      <div class="orbit-ring"></div>
+      <div class="orbit-ring r2"></div>
+      <div class="orbit-center rv-fade">
+        <img class="orbit-center-seal" src="public/assets/magnetaria-seal.png" alt="Magnetaria" loading="lazy">
+        <div class="orbit-center-sub">Dirección Comercial &amp; Creativa</div>
+      </div>
+      <!-- 7 satélites distribuidos en círculo -->
+      <div class="orbit-item orbit-a" data-angle="270"><span class="orbit-dot"></span><span class="orbit-label">Posicionamiento</span></div>
+      <div class="orbit-item orbit-a" data-angle="321"><span class="orbit-dot"></span><span class="orbit-label">Narrativa</span></div>
+      <div class="orbit-item orbit-a" data-angle="13"><span class="orbit-dot"></span><span class="orbit-label">Ofertas</span></div>
+      <div class="orbit-item orbit-a" data-angle="64"><span class="orbit-dot"></span><span class="orbit-label">Identidad Visual</span></div>
+      <div class="orbit-item orbit-a" data-angle="116"><span class="orbit-dot"></span><span class="orbit-label">Contenido</span></div>
+      <div class="orbit-item orbit-a" data-angle="167"><span class="orbit-dot"></span><span class="orbit-label">Ventas</span></div>
+      <div class="orbit-item orbit-a" data-angle="219"><span class="orbit-dot"></span><span class="orbit-label">Ecosistema Digital</span></div>
+    </div>
+
+    <h3 id="sistema-heading" class="sys-h3 rv">Porque estas cosas no deberían vivir separadas.</h3>
+    <div class="sys-chain">
+      <p class="sys-txt rv">Una oferta afecta lo que comunicas.</p>
+      <p class="sys-txt rv">Lo que comunicas afecta el tipo de cliente que atraes.</p>
+      <p class="sys-txt rv">El cliente que quieres atraer afecta cómo debes posicionarte.</p>
+      <p class="sys-txt rv">Tu posicionamiento afecta lo que publicas.</p>
+      <p class="sys-txt rv">Y todo eso afecta cómo se percibe tu negocio.</p>
+      <p class="sys-final rv">Nosotros trabajamos sobre el sistema completo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ANTES / DESPUÉS ════════════════════════════ -->
+<section id="comparativa" aria-labelledby="cmp-heading">
+  <div class="wrap">
+    <h2 id="cmp-heading" class="cmp-title rv">Esto es lo que cambia en tu negocio cuando nosotros estamos dentro.</h2>
+    <div class="cmp-hd rv d1">
+      <span class="cmp-hd-l">Antes</span>
+      <span class="cmp-hd-r">Con dirección</span>
+    </div>
+
+    <div class="cmp-row rv"><p class="cmp-before">Publicar contenido</p><span class="cmp-arrow">→</span><p class="cmp-after">Construir una narrativa.</p></div>
+    <div class="cmp-row rv"><p class="cmp-before">Tener servicios</p><span class="cmp-arrow">→</span><p class="cmp-after">Tener ofertas.</p></div>
+    <div class="cmp-row rv"><p class="cmp-before">Hablar de todo lo que sabes</p><span class="cmp-arrow">→</span><p class="cmp-after">Ser reconocida por ideas específicas.</p></div>
+    <div class="cmp-row rv"><p class="cmp-before">Esperar que lleguen clientes</p><span class="cmp-arrow">→</span><p class="cmp-after">Diseñar comunicación para atraer al cliente que quieres.</p></div>
+    <div class="cmp-row rv"><p class="cmp-before">Explicar constantemente tu valor</p><span class="cmp-arrow">→</span><p class="cmp-after">Construir una marca que empieza a explicarlo antes de la llamada.</p></div>
+    <div class="cmp-row rv"><p class="cmp-before">Tener presencia digital</p><span class="cmp-arrow">→</span><p class="cmp-after">Tener un activo comercial.</p></div>
+
+    <div class="cmp-close rv">
+      <p class="dim">No queremos que publiques más.</p>
+      <p>Queremos que todo lo que publiques tenga una razón para existir.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CASO REAL — VALENTINA ══════════════════════ -->
+<section id="caso-valentina" aria-labelledby="cv-heading" style="color: var(--carbon);">
+  <div class="wrap">
+    <div class="cv-frame">
+      <div class="caso-eye rv">
+        <span class="divider"></span>
+        <p class="lbl">Caso real / Valentina</p>
+      </div>
+      <h2 id="cv-heading" class="caso-h2 rv d1" style="max-width:26ch;">De explicar servicios jurídicos a hacer que los clientes lleguen preguntando por "Blindaje Legal".</h2>
+
+      <div class="cv-body rv d2">
+        <p>Cuando empezamos a trabajar la marca de Valentina, construimos desde cero la dirección de su comunicación.</p>
+        <p>Definimos su narrativa.</p>
+        <p>Organizamos sus temas.</p>
+        <p>Trabajamos su posicionamiento.</p>
+        <p>Construimos la forma de presentar sus servicios.</p>
+        <p>Y empezamos a introducir conceptos propios dentro de su comunicación.</p>
+        <p class="cv-big">Uno de ellos fue:</p>
+      </div>
+
+      <p class="caso-big cv-big rv">BLINDAJE LEGAL.</p>
+
+      <div class="cv-tail rv">
+        <p>Hoy están llegando clientes empresariales interesados en trabajar con ella durante periodos de <span class="cv-bold">6 y 12 meses</span>.</p>
+        <p>Pero hay algo todavía más interesante.</p>
+        <p>Empezaron a llegar utilizando las mismas palabras que habíamos introducido estratégicamente en su comunicación.</p>
+      </div>
+
+      <p class="caso-hl cv-hl rv">El mercado empezó a devolvernos nuestro propio lenguaje.</p>
+
+      <div class="cv-tail rv">
+        <p>Eso es lo que buscamos.</p>
+        <p>No simplemente que alguien vea un reel.</p>
+        <p>Queremos construir una idea lo suficientemente clara para que las personas sepan por qué vienen a buscarte.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ CASO — SANDRA / OFERTAS ════════════════════ -->
+<section id="caso-sandra" aria-labelledby="cs-heading">
+  <div class="wrap-md">
+    <div class="caso-eye rv">
+      <span class="divider"></span>
+      <p class="lbl">Otro problema que encontramos constantemente</p>
+    </div>
+    <h2 id="cs-heading" class="caso-h2 rv d1" style="color:var(--w92); max-width:20ch;">Muchas profesionales tienen servicios.<br>Muy pocas tienen ofertas.</h2>
+
+    <div class="cs-phrases" id="sandra-phrases">
+      <span class="cs-phrase">"Tengo consultas."<span class="strike"></span></span>
+      <span class="cs-phrase">"También hago asesorías."<span class="strike"></span></span>
+      <span class="cs-phrase">"Depende del caso."<span class="strike"></span></span>
+      <span class="cs-phrase">"Tengo diferentes servicios."<span class="strike"></span></span>
+    </div>
+
+    <div class="cs-body rv">
+      <p>El problema aparece cuando el cliente tiene que hacer demasiado esfuerzo para entender qué debería contratar.</p>
+      <p>Con marcas como Sandra estamos trabajando precisamente sobre esto:</p>
+      <p><b>tomar conocimiento, experiencia y servicios existentes y convertirlos en ofertas más claras, comprables y atractivas.</b></p>
+    </div>
+
+    <p class="caso-hl cs-hl rv">Ser extraordinaria haciendo algo no significa automáticamente que seas extraordinaria vendiéndolo.</p>
+    <p class="cs-final rv">Y eso se puede construir.</p>
+  </div>
+</section>
+
+<!-- ══ QUÉ PUEDE CAMBIAR ══════════════════════════ -->
+<section id="que-cambia" aria-labelledby="qc-heading">
+  <div class="wrap">
+    <h2 id="qc-heading" class="qc-h2 rv">¿Qué empieza a pasar cuando todo esto tiene dirección?</h2>
+    <div class="qc-grid">
+      <div class="qc-item rv d1"><span class="qc-n">01</span><p class="qc-txt">Tu marca empieza a ser reconocida por ideas específicas.</p></div>
+      <div class="qc-item rv d2"><span class="qc-n">02</span><p class="qc-txt">Tus servicios se vuelven más fáciles de entender.</p></div>
+      <div class="qc-item rv d3"><span class="qc-n">03</span><p class="qc-txt">Tus ofertas se vuelven más fáciles de comprar.</p></div>
+      <div class="qc-item rv d4"><span class="qc-n">04</span><p class="qc-txt">Tu contenido deja de depender de "qué publicamos hoy".</p></div>
+      <div class="qc-item rv d5"><span class="qc-n">05</span><p class="qc-txt">Empiezas a atraer conversaciones comerciales de mayor calidad.</p></div>
+      <div class="qc-item rv d6"><span class="qc-n">06</span><p class="qc-txt">La percepción de tu negocio empieza a acercarse al nivel real de tu trabajo.</p></div>
+    </div>
+    <div class="qc-close rv">
+      <p>No prometemos hacerte viral.</p>
+      <p>No prometemos millones de seguidores.</p>
+      <p>No necesitamos hacerlo.</p>
+      <p class="strong">Queremos construir una marca que ayude a vender mejor el negocio que existe detrás.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CÓMO FUNCIONA ══════════════════════════════ -->
+<section id="como-funciona" aria-labelledby="cf-heading">
+  <div class="wrap">
+    <h2 id="cf-heading" class="cf-h2 rv">No te entregamos una estrategia para que después tú averigües cómo ejecutarla.</h2>
+    <p class="cf-sub rv d1">Entramos a ejecutarla contigo.</p>
+
+    <div class="timeline">
+      <div class="timeline-spine"></div>
+      <div class="timeline-fill" id="tl-fill"></div>
+
+      <div class="paso rv">
+        <div><p class="paso-num-lbl">Paso 01</p><p class="paso-num-big">Nos sentamos contigo</p></div>
+        <div>
+          <p class="paso-p">La primera reunión puede ser virtual o presencial en Barranquilla.</p>
+          <p class="paso-p">Queremos entender:</p>
+          <div class="paso-list">
+            <div class="paso-list-item"><span class="paso-dash">—</span><span class="paso-list-txt">qué vendes</span></div>
+            <div class="paso-list-item"><span class="paso-dash">—</span><span class="paso-list-txt">cómo estás vendiendo</span></div>
+            <div class="paso-list-item"><span class="paso-dash">—</span><span class="paso-list-txt">qué clientes tienes</span></div>
+            <div class="paso-list-item"><span class="paso-dash">—</span><span class="paso-list-txt">qué quieres construir</span></div>
+            <div class="paso-list-item"><span class="paso-dash">—</span><span class="paso-list-txt">qué está funcionando</span></div>
+            <div class="paso-list-item"><span class="paso-dash">—</span><span class="paso-list-txt">y qué está frenando el crecimiento</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="paso rv">
+        <div><p class="paso-num-lbl">Paso 02</p><p class="paso-num-big">Construimos tu mapa</p></div>
+        <div>
+          <p class="paso-p">Después de iniciar el servicio creamos un formulario específicamente para tu negocio.</p>
+          <p class="paso-p">No utilizamos el mismo diagnóstico para todo el mundo.</p>
+          <p class="paso-p">Tomamos lo que descubrimos en la reunión y profundizamos.</p>
+          <p class="paso-p">Con esa información construimos la estrategia y el cronograma de trabajo.</p>
+        </div>
+      </div>
+
+      <div class="paso rv">
+        <div><p class="paso-num-lbl">Paso 03</p><p class="paso-num-big">Intervenimos lo que haga falta</p></div>
+        <div>
+          <p class="paso-p">Dependiendo del negocio podemos trabajar sobre:</p>
+          <div class="paso-chips">
+            <span class="paso-chip">Narrativa</span>
+            <span class="paso-chip">Posicionamiento</span>
+            <span class="paso-chip">Ofertas</span>
+            <span class="paso-chip">Identidad visual</span>
+            <span class="paso-chip">Estrategia de contenido</span>
+            <span class="paso-chip">Página web</span>
+            <span class="paso-chip">Páginas de venta</span>
+            <span class="paso-chip">Links de pago</span>
+            <span class="paso-chip">Historias de venta</span>
+            <span class="paso-chip">Publicidad</span>
+            <span class="paso-chip">Ecosistema comercial digital</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="paso rv">
+        <div><p class="paso-num-lbl">Paso 04</p><p class="paso-num-big">Grabamos contigo</p></div>
+        <div>
+          <p class="paso-p">Una vez por semana realizamos una sesión de grabación de máximo dos horas.</p>
+          <p class="paso-p">Nosotros dirigimos.</p>
+          <p class="paso-p">Sabemos qué necesitamos grabar y por qué.</p>
+          <p class="paso-p">No tienes que llegar inventando qué decir.</p>
+        </div>
+      </div>
+
+      <div class="paso rv">
+        <div><p class="paso-num-lbl">Paso 05</p><p class="paso-num-big">Ejecutamos</p></div>
+        <div>
+          <p class="paso-p">Editamos el contenido.</p>
+          <p class="paso-p">Publicamos tres veces por semana.</p>
+          <p class="paso-p">Mantenemos la comunicación alineada con la estrategia.</p>
+          <p class="paso-p">Y además entregamos ideas y estructuras de historias de venta para que puedas aparecer durante la semana y vender tus servicios de manera natural, estratégica y estética.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PARA QUIÉN ES ══════════════════════════════ -->
+<section id="para-quien" aria-labelledby="pq-heading">
+  <div class="wrap-sm">
+    <h2 id="pq-heading" class="pq-h2 rv">Probablemente Magnetaria sea para ti si mientras leías esto pensaste:</h2>
+    <div class="pq-lines" id="pq-lines">
+      <p class="pq-line">"Soy mucho mejor de lo que mi marca demuestra."</p>
+      <p class="pq-line">"Tengo demasiadas cosas que podría vender y no sé cómo organizarlas."</p>
+      <p class="pq-line">"Quiero clientes mejores, no simplemente más seguidores."</p>
+      <p class="pq-line">"Mi negocio creció, pero mi comunicación se quedó atrás."</p>
+      <p class="pq-line">"Estoy cansada de improvisar contenido."</p>
+      <p class="pq-line">"Quiero que mi marca tenga una dirección."</p>
+      <p class="pq-line">"Quiero que las personas entiendan por qué mi trabajo vale lo que vale."</p>
+    </div>
+    <p class="pq-close rv">Entonces probablemente tenemos mucho de qué hablar.</p>
+  </div>
+</section>
+
+<!-- ══ INVERSIÓN ══════════════════════════════════ -->
+<section id="inversion" aria-labelledby="inv-heading">
+  <div class="wrap">
+    <div class="inv-grid">
+      <div class="inv-left">
+        <p class="lbl rv">Dirección Estratégica Digital</p>
+        <h2 id="inv-heading" class="inv-h2 rv d1">Trabajamos desde $2.000.000 COP mensuales.</h2>
+        <p class="inv-p rv d2"><b>"Desde"</b> es importante.</p>
+        <p class="inv-p rv d2">No todos los negocios necesitan lo mismo.</p>
+        <p class="inv-p rv d3">Algunas marcas necesitan principalmente estrategia, comunicación, contenido y dirección.</p>
+        <p class="inv-p rv d3">Otras necesitan además organizar sus ofertas, construir una página web, implementar sistemas de pago, trabajar publicidad o intervenir otras partes de su ecosistema digital.</p>
+        <p class="inv-p rv d4"><b>Por eso primero conocemos tu negocio.</b></p>
+        <p class="inv-p rv d4">Después te recomendamos qué deberíamos construir.</p>
+      </div>
+
+      <div class="inv-card rv d2">
+        <div class="inv-card-hd">
+          <p class="inv-card-lbl">Inversión mensual</p>
+          <div class="inv-amount-row"><span class="inv-curr">Desde</span><span class="inv-amount">$2.000.000</span></div>
+          <p class="inv-per">COP / mes · según alcance del negocio</p>
+        </div>
+        <div class="inv-includes">
+          <p class="inv-inc-lbl">Base de toda dirección</p>
+          <div class="inv-inc-item"><span class="inv-inc-dot"></span><span class="inv-inc-txt">Estrategia</span></div>
+          <div class="inv-inc-item"><span class="inv-inc-dot"></span><span class="inv-inc-txt">Comunicación</span></div>
+          <div class="inv-inc-item"><span class="inv-inc-dot"></span><span class="inv-inc-txt">Contenido</span></div>
+          <div class="inv-inc-item"><span class="inv-inc-dot"></span><span class="inv-inc-txt">Dirección</span></div>
+        </div>
+        <div class="inv-includes" style="border-top:.5px solid var(--w08);">
+          <p class="inv-inc-lbl">Cuando el negocio lo pide</p>
+          <div class="inv-inc-item"><span class="inv-inc-dot"></span><span class="inv-inc-txt">Ofertas y página web</span></div>
+          <div class="inv-inc-item"><span class="inv-inc-dot"></span><span class="inv-inc-txt">Sistemas de pago</span></div>
+          <div class="inv-inc-item"><span class="inv-inc-dot"></span><span class="inv-inc-txt">Publicidad</span></div>
+          <div class="inv-inc-item"><span class="inv-inc-dot"></span><span class="inv-inc-txt">Ecosistema digital</span></div>
+        </div>
+        <div class="inv-cta-group">
+          <a href="https://wa.link/3s0ccp" target="_blank" rel="noopener" class="btn btn-gold" id="price-cta">QUIERO ELEVAR MI NEGOCIO</a>
+          <p class="inv-secure">Reuniones virtuales + presenciales en Barranquilla</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CIERRE ═════════════════════════════════════ -->
+<section id="cierre" aria-labelledby="cierre-heading">
+  <div class="wrap-sm">
+    <div class="cierre-inner">
+      <p class="cierre-pause rv">Quizás tu negocio no necesita convertirse en otra cosa.</p>
+      <p class="cierre-pause lift rv d2">Quizás necesita empezar a verse como lo que ya es.</p>
+
+      <div class="cierre-facts rv d3">
+        <p>Tienes el conocimiento.</p>
+        <p>Tienes la experiencia.</p>
+        <p>Tienes algo que las personas están dispuestas a pagar.</p>
+        <p class="last">Nuestro trabajo es construir la estrategia que permita que el mercado también pueda verlo.</p>
+      </div>
+
+      <h2 id="cierre-heading" class="cierre-final rv d4">Hagamos que tu marca esté a la altura de tu trabajo.</h2>
+
+      <div class="cierre-cta rv d5">
+        <a href="https://wa.link/3s0ccp" target="_blank" rel="noopener" class="btn btn-gold" id="final-cta" style="padding:22px 52px; font-size:10.5px;">QUIERO ELEVAR MI NEGOCIO</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══ FOOTER ═════════════════════════════════════ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img class="footer-seal" src="public/assets/magnetaria-seal.png" alt="Magnetaria" loading="lazy">
+        <div class="footer-brand-txt">
+          <p class="footer-name">Magnetaria</p>
+          <p class="footer-tag">Dirección Estratégica Digital</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="https://instagram.com/magnetaria_" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.link/3s0ccp" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">Barranquilla, Colombia + modalidad virtual.</p>
+      <p class="footer-copy">© <span id="year"></span> Magnetaria. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ CTA STICKY MÓVIL ═══════════════════════════ -->
+<div id="mob-cta" role="complementary" aria-label="Contacto rápido">
+  <button id="mob-cta-close" aria-label="Cerrar">✕</button>
+  <span class="mob-cta-txt">Dirección Estratégica Digital</span>
+  <a href="https://wa.link/3s0ccp" target="_blank" rel="noopener" class="mob-cta-btn" id="mob-cta-btn">QUIERO ELEVAR MI NEGOCIO</a>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ── Año dinámico ── */
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ── Analytics (no-op seguro hasta que se configure) ── */
+  function track(name, params) {
+    try {
+      if (typeof gtag !== 'undefined') gtag('event', name, params || {});
+      if (typeof fbq !== 'undefined') fbq('trackCustom', name, params || {});
+    } catch (e) {}
+  }
+  track('view_magnetaria_page');
+
+  /* ── Intersection Observer (reveals) ── */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('on');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.rv, .rv-fade, .rv-up, .lg').forEach(el => io.observe(el));
+
+  /* ── Header scroll ── */
+  const hdr = document.getElementById('hdr');
+  window.addEventListener('scroll', () => {
+    hdr.classList.toggle('scrolled', window.scrollY > 72);
+  }, { passive: true });
+
+  /* ── Menú móvil ── */
+  const menuBtn = document.getElementById('menu-btn');
+  const mobMenu = document.getElementById('mob-menu');
+  const mobClose = document.getElementById('mob-close');
+  function openMenu() { mobMenu.classList.add('open'); document.body.style.overflow = 'hidden'; menuBtn.setAttribute('aria-expanded','true'); }
+  function closeMenu() { mobMenu.classList.remove('open'); document.body.style.overflow = ''; menuBtn.setAttribute('aria-expanded','false'); }
+  if (menuBtn) menuBtn.addEventListener('click', openMenu);
+  if (mobClose) mobClose.addEventListener('click', closeMenu);
+  if (mobMenu) mobMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  /* ── Sistema — satélites en órbita ── */
+  const orbit = document.getElementById('orbit');
+  if (orbit) {
+    const items = orbit.querySelectorAll('.orbit-item');
+    function layout() {
+      const r = orbit.clientWidth * 0.40;
+      items.forEach(item => {
+        const angle = parseFloat(item.dataset.angle) * Math.PI / 180;
+        const x = Math.cos(angle) * r;
+        const y = Math.sin(angle) * r;
+        item.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    }
+    layout();
+    window.addEventListener('resize', layout);
+
+    const orbitObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          items.forEach((item, i) => {
+            item.style.transition = 'opacity .8s ' + getComputedStyle(document.documentElement).getPropertyValue('--ease-out') + ', transform .8s ' + getComputedStyle(document.documentElement).getPropertyValue('--ease-out');
+            item.style.opacity = 0;
+            setTimeout(() => { item.style.opacity = 1; }, 160 + i * 130);
+          });
+          orbitObs.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    orbitObs.observe(orbit);
+  }
+
+  /* ── Timeline fill ── */
+  const tlFill = document.getElementById('tl-fill');
+  if (tlFill) io.observe(tlFill);
+  if (tlFill) {
+    const tlObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { tlFill.classList.add('on'); tlObs.disconnect(); } });
+    }, { threshold: 0.1 });
+    tlObs.observe(tlFill);
+  }
+
+  /* ── Frases tachadas (caso Sandra) ── */
+  const phrases = document.querySelectorAll('#sandra-phrases .cs-phrase');
+  if (phrases.length) {
+    const phObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          phrases.forEach((p, i) => setTimeout(() => p.classList.add('on'), 150 + i * 220));
+          phObs.disconnect();
+        }
+      });
+    }, { threshold: 0.4 });
+    phObs.observe(document.getElementById('sandra-phrases'));
+  }
+
+  /* ── Para quién es — líneas secuenciales ── */
+  const pqLines = document.querySelectorAll('#pq-lines .pq-line');
+  if (pqLines.length) {
+    const pqObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          pqLines.forEach((l, i) => setTimeout(() => l.classList.add('lit'), 200 + i * 260));
+          pqObs.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+    pqObs.observe(document.getElementById('pq-lines'));
+  }
+
+  /* ── CTA sticky móvil ── */
+  const mobCta = document.getElementById('mob-cta');
+  const mobCtaClose = document.getElementById('mob-cta-close');
+  let ctaClosed = false, ctaShown = false;
+  if (mobCta) {
+    const showAt = () => document.documentElement.scrollHeight * 0.30;
+    window.addEventListener('scroll', () => {
+      if (ctaClosed) return;
+      if (window.scrollY > showAt() && !ctaShown) { ctaShown = true; mobCta.classList.add('show'); }
+      const inv = document.getElementById('inversion');
+      const cierre = document.getElementById('cierre');
+      if (inv && cierre) {
+        const rInv = inv.getBoundingClientRect();
+        const rCierre = cierre.getBoundingClientRect();
+        if (rInv.top < window.innerHeight || rCierre.top < window.innerHeight) {
+          mobCta.classList.remove('show');
+        } else if (ctaShown && !ctaClosed) {
+          mobCta.classList.add('show');
+        }
+      }
+    }, { passive: true });
+    if (mobCtaClose) mobCtaClose.addEventListener('click', () => {
+      ctaClosed = true; mobCta.classList.remove('show'); mobCta.classList.add('gone');
+    });
+  }
+
+  /* ── Tracking de clics en CTA ── */
+  ['hero-cta','hdr-cta','price-cta','final-cta','mob-cta-btn','mob-menu-cta'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('click', () => {
+      track('click_magnetaria_cta', { id });
+      track('initiate_magnetaria_whatsapp');
+    });
+  });
+
+  /* ── Vista de la sección de inversión ── */
+  const invEl = document.getElementById('inversion');
+  if (invEl) {
+    const priceObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { track('view_magnetaria_pricing'); priceObs.disconnect(); } });
+    }, { threshold: 0.4 });
+    priceObs.observe(invEl);
+  }
+
+})();
+</script>
+</body>
+</html>
