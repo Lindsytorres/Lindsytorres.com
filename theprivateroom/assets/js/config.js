@@ -10,14 +10,14 @@
  */
 window.siteConfig = {
   siteName: "The Private Room",
-  descriptor: "Mentoría privada 1:1",
+  descriptor: "Mentoría estratégica privada · Done With You",
   universe: "Inside The Legacy Method™",
   mentor: "Lindsy Torres",
   mentorTitle: "Economista · Estratega de negocios",
-  duration: "Seis meses",
-  fullInvestment: "USD $11,888",
-  paymentPlan: "6 pagos de USD $2,500",
-  totalPaymentPlan: "USD $15,000",
+  duration: "90 días",
+  fullInvestment: "USD 2.500",
+  paymentPlan: "USD 1.500 inicial + USD 750 mes 2 + USD 750 mes 3",
+  totalPaymentPlan: "USD 3.000",
 
   // Site is deployed at lindsytorres.com/theprivateroom/ — paths below are
   // absolute from that domain root, matching the canonical/OG tags in each
@@ -68,7 +68,7 @@ window.siteAssets = {
   logoMonogram: "/theprivateroom/assets/images/pr-monogram.png",
   keyArt: "/theprivateroom/assets/images/the-private-room-key-art.png", // Pieza completa de identidad visual (puerta + monograma + wordmark) — solo como referencia, no usar como hero desktop.
   signature: "", // TODO: Replace with transparent PNG signature of Lindsy Torres.
-  openGraphImage: "/theprivateroom/assets/images/og-placeholder.svg",
+  openGraphImage: "/theprivateroom/assets/images/the-private-room-og.jpg",
 };
 
 /** True when a configured asset path actually points at a usable file. */
